@@ -11,10 +11,19 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 
 OBJ = ${SRC:.c=.o}
 
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
+		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
+		ft_lstclear.c ft_lstiter.c ft_lstmap.c\
+
+BOBJ = ${BONUS:.c=.o}
+
 all : ${NAME}
 
 ${NAME} : ${OBJ}
-	ar rcs ${NAME} ${OBJ}
+	ar rc ${NAME} ${OBJ}
+
+bonus : ${OBJ} ${BOBJ}
+	ar rc ${NAME} ${OBJ} ${BOBJ}
 
 %.o : %.c
 	${CC} ${FLAGS} -c $<

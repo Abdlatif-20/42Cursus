@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:35:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/24 16:52:45 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/25 03:13:06 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_long(int sign)
 
 int	ft_atoi(const char *str)
 {
-	size_t	res;
+	int		res;
 	int		sign;
 	size_t	c;
 
@@ -43,7 +43,7 @@ int	ft_atoi(const char *str)
 		str++;
 		c++;
 	}
-	if (c > 9223372036854775807)
+	if (c > 9223372036854775807 || c > 19)
 		return (check_long(sign));
 	return (res * sign);
 }
