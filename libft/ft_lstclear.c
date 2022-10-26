@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 21:02:25 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/26 11:17:30 by aben-nei         ###   ########.fr       */
+/*   Created: 2022/10/26 11:44:58 by aben-nei          #+#    #+#             */
+/*   Updated: 2022/10/26 15:39:28 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char	*str;
-	size_t	i;
+	t_list	*swap;
 
-	if (!s)
-		return (NULL);
-	if (len >= ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	str = malloc(len + 1);
-	if (!str || !s)
-		return (NULL);
-	i = 0;
-	while (i < len && start <= ft_strlen(s))
+	if (lst && del)
 	{
-		str[i++] = *(s + start);
-		start++;
+		if (*lst)
+		{
+			while (*lst)
+			{
+				swap = (*lst)->next;
+				ft_lstdelone(*lst, del);
+				(*lst) = swap;
+			}
+		}
 	}
-	str[i] = '\0';
-	return (str);
 }

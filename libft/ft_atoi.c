@@ -6,28 +6,18 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:35:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/25 03:13:06 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/26 17:28:09 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	check_long(int sign)
-{
-	if (sign == -1)
-		return (0);
-	else
-		return (-1);
-}
-
 int	ft_atoi(const char *str)
 {
 	int		res;
 	int		sign;
-	size_t	c;
 
 	res = 0;
-	c = 0;
 	sign = 1;
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
@@ -41,9 +31,15 @@ int	ft_atoi(const char *str)
 	{
 		res = (res * 10) + (*str - '0');
 		str++;
-		c++;
 	}
-	if (c > 9223372036854775807 || c > 19)
-		return (check_long(sign));
 	return (res * sign);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int main()
+// {
+// 	printf("%d\n", ft_atoi("9223372036854775808"));
+// 	printf("%d\n", atoi("9223372036854775808"));
+// }

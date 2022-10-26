@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 21:02:25 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/26 11:17:30 by aben-nei         ###   ########.fr       */
+/*   Created: 2022/10/26 00:26:04 by aben-nei          #+#    #+#             */
+/*   Updated: 2022/10/26 14:14:30 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char	*str;
-	size_t	i;
-
-	if (!s)
-		return (NULL);
-	if (len >= ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	str = malloc(len + 1);
-	if (!str || !s)
-		return (NULL);
-	i = 0;
-	while (i < len && start <= ft_strlen(s))
+	if (lst && del)
 	{
-		str[i++] = *(s + start);
-		start++;
+		(*del)(lst->content);
+		free(lst);
 	}
-	str[i] = '\0';
-	return (str);
 }

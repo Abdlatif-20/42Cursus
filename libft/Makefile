@@ -9,28 +9,34 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 	ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c\
 	ft_putendl_fd.c ft_putnbr_fd.c\
 
+
+B_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
+		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
+		ft_lstclear.c ft_lstiter.c\
+
 OBJ = ${SRC:.c=.o}
 
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
-		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
-		ft_lstclear.c ft_lstiter.c ft_lstmap.c\
 
-BOBJ = ${BONUS:.c=.o}
-
+B_OBJ = ${B_SRC:.c=.o}
 all : ${NAME}
 
+
+%.o : %.c libft.h
+	${CC} ${FLAGS} -c $< -o $@
+
 ${NAME} : ${OBJ}
-	ar rc ${NAME} ${OBJ}
+	ar rcs ${NAME} ${OBJ}
 
-bonus : ${OBJ} ${BOBJ}
-	ar rc ${NAME} ${OBJ} ${BOBJ}
 
-%.o : %.c
-	${CC} ${FLAGS} -c $<
+
+bonus : ${OBJ} ${B_OBJ}
+	ar rcs ${NAME} ${OBJ} ${B_OBJ}
+
+
 
 fclean : clean
-	rm -f ${NAME}
+	rm -rf ${NAME}
 
 clean :
-	rm -f ${OBJ}
+	rm -rf ${OBJ} ${B_OBJ}
 re: fclean all

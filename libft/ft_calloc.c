@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:35:48 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/21 20:58:02 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/26 16:22:28 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_calloc(size_t n, size_t size)
 {
 	void	*p;
 
-	if (size == SIZE_MAX)
-		return (NULL);
 	p = malloc(n * size);
 	if (!p)
 		return (NULL);

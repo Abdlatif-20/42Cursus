@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:18:35 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/23 18:55:43 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/26 16:10:05 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,13 @@ void	*ft_memset(void *str, int c, size_t n)
 		src[i++] = (unsigned char)c;
 	return (src);
 }
-// #include<stdio.h>
-// #include<string.h>
-// int main()
-// {
-//    char str[50];
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 300;
+	int	b = 311;
+	ft_memset(&a, b, 1);
+	
+}
 
-//    strcpy(str,"This is string.h library function");
-//    printf("%s\n", str);
-//    ft_memset(str,'$',7);
-//     printf("%s\n", str);
-// }
