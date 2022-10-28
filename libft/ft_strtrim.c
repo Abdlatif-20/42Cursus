@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 20:25:14 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/23 18:27:26 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/28 01:14:58 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	str_end(char const *str, char const *set)
 	end = ft_strlen(str) - 1;
 	while (set[i])
 	{
-		while (str[end] == set[i] && str_start(str, set) < end)
+		while (end >= 0 && str[end] == set[i] && str_start(str, set) < end)
 		{
 			end--;
 			i = 0;
@@ -66,13 +66,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
-/*
-#include<stdio.h>
 
-int main()
-{
-	char str[] = "abababab";
-	printf("origine string = %s---------\n", str);
-	char *s = ft_strtrim(str, "ab");
-	printf("\ncopy string = %s\n------------\n", s);
-}*/
+// #include<stdio.h>
+
+// int main()
+// {
+// 	char str[] = "abcabcabpnlmusicabccc";
+// 	printf("origine string = %s---------\n", str);
+// 	char *s = ft_strtrim(str, "ab");
+// 	printf("\ncopy string = %s\n------------\n", s);
+// }

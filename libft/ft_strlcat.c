@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:23:54 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/21 20:07:32 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/28 00:33:45 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[len_dst + i] = '\0';
 	return (len_dst + len_src);
 }
-/*
- #include<string.h>
- #include<stdio.h>
- int main()
- {
-     char dest[20] = "B000000000000000000";
-     char src[] = "AAAAAAAA";
-	 //char b[0xF] = "nyan !";
-	 size_t len = strlcat(dest, src, 20);
 
-	printf("%zu\n", len);
-      printf("dst = %s\n", dest);
- }*/
+//  #include<string.h>
+//  #include<stdio.h>
+//  int main()
+//  {
+//      char dest[8] = "B000000";
+//      char src[] = "AAAAAAAA";
+// 	 //char b[0xF] = "nyan !";
+// 	 size_t len = strlcat(dest, src, 5);
+
+// 	// printf("%zu\n", len);
+//     printf("dst = %s\n", dest);
+//  }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:21:08 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/16 10:48:22 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/28 00:37:10 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	i = num_len(nb);
-	str = malloc(i + 1);
+	str = (char *)malloc(i + 1); // 2's complement
 	if (!str)
 		return (NULL);
 	str[i--] = '\0';
@@ -68,9 +68,9 @@ char	*ft_itoa(int n)
 		convert_to_char(str, nb, i);
 	return (str);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	printf("%s\n", ft_itoa(1056));
-}*/
+
+// #include<stdio.h>
+// int main()
+// {
+// 	printf("%s\n", ft_itoa(1056));
+// }

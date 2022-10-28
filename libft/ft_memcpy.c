@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:20:45 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/26 16:29:54 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/27 23:43:35 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dst);
 }
 
-/*
- #include<stdio.h>
- #include<string.h>
- int main()
- {
-     char dst[8];
-     printf("\n---------------%s\n", memcpy(dst, 0, 7));
-    //printf("\n%s\n", ft_memcpy(dst, 0, 7));
- }*/
+//  #include<stdio.h>
+//  #include<string.h>
+//  int main()
+//  {
+//      char *dst = NULL;
+// 	 char str[] = "hello bro";
+//     //  printf("\n---------------%s\n", memcpy(dst, str, 7));
+//     printf("\n%s\n", ft_memcpy(dst, str, 7));
+//  }

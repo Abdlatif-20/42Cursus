@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 20:11:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/26 16:31:55 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/27 23:51:44 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
- #include<stdio.h>
- #include<string.h>
- int main()
- {
-     char src[] = "Hello World";
-     printf("\n---------------%s\n", ft_memmove(src + 4, src, 7));
-    //printf("\n%s\n", ft_memcpy(dst, 0, 7));
- }
+//  #include<stdio.h>
+//  #include<string.h>
+//  int main()
+//  {
+//      char src[] = "hello";
+// 	 char *dest = NULL;
+//      printf("%s\n", memmove(dest, src, 7));
+//     //printf("\n%s\n", ft_memcpy(dst, 0, 7));
+//  }

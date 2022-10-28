@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:34:50 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/09 21:23:07 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/28 00:34:07 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	if (size != 0)
 	{
 		while (src[i] && i < size - 1)
-		{
-			dst[j] = src[i];
-			i++;
-			j++;
-		}
+			dst[j++] = src[i++];
 		dst[j] = '\0';
 		i = 0;
 	}

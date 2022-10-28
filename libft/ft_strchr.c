@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:20:19 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/23 15:40:35 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/28 00:18:13 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ char	*ft_strchr(const char *s, int c)
 			return (str + i);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
+
 /*
  #include<stdio.h>
  #include<string.h>

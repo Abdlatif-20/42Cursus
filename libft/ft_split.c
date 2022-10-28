@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:10:02 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/21 23:56:38 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/28 01:39:59 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,6 @@ int	word_len(char const *s, char c, int *index)
 	return (i);
 }
 
-void	check_allocate(char **tab)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (tab[i])
-	{
-		while (tab[i][j])
-			j++;
-		if (!ft_strlen(tab[i]))
-			free(tab);
-		i++;
-	}
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
@@ -89,13 +72,14 @@ char	**ft_split(char const *s, char c)
 	}
 	return (tab);
 }
-/*
-#include<stdio.h>
-int	main(void)
-{
-char **tab;
-char src[] = "Hello World !";
-tab = ft_split(src, ' ');
-for (int i = 0; i <= 3; i++)
-printf("tab[%d] = %s\n", i, tab[i]);
-}*/
+
+// #include<stdio.h>
+// int	main(void)
+// {
+// char **tab;
+// // char src[] = "Hello World !";
+// int i = -1;
+// tab = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
+// while (tab[++i])
+// 	printf("tab[%d] = %s\n", i, tab[i]);
+// }
