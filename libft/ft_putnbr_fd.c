@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:07:49 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/24 23:55:26 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/30 02:39:16 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,3 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd((n + '0'), fd);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	int	fd;
-
-	fd = open("test1", O_RDONLY);
-	if (fd == -1)
-		return (-1);
-	else
-		ft_putnbr_fd(-2147483648LL, 1);
-	//printf("%d\n", );
-}*/

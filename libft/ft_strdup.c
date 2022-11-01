@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 19:17:01 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/27 17:45:10 by aben-nei         ###   ########.fr       */
+/*   Created: 2022/10/31 17:05:23 by aben-nei          #+#    #+#             */
+/*   Updated: 2022/11/01 10:25:39 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,12 @@
 char	*ft_strdup(const char *s)
 {
 	char	*str;
-	size_t	i;
 	size_t	len;
 
 	len = ft_strlen(s);
-	str = malloc(len + 1);
+	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
-	i = -1;
-	while (++i < len)
-	{
-		str[i] = *s;
-		s++;
-	}
-	str[i] = '\0';
+	ft_strlcpy(str, s, len + 1);
 	return (str);
 }
-
-#include<stdio.h>
-#include<string.h>
- 
-// int main()
-// {
-//     // char source[] = "GeeksForGeeks";
-// 	char * s;
- 
-//     // A copy of source is created dynamically
-//     // and pointer to copy is returned.
-//     char* target = strdup(s);
-// 	s = ft_strdup((char *)"");
-// 	printf("|%s|\n", target);
-// 	// char *ptr;
-// 	// ptr = ft_strdup(source);
-//     //printf("%s", target);
-	
-//     return 0;
-// }

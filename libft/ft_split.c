@@ -6,13 +6,13 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:10:02 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/28 01:39:59 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/30 19:17:51 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	num_word(char const *s, char c)
+static int	num_word(char const *s, char c)
 {
 	int	i;
 	int	nw;
@@ -33,7 +33,7 @@ int	num_word(char const *s, char c)
 	return (nw);
 }
 
-int	word_len(char const *s, char c, int *index)
+static int	word_len(char const *s, char c, int *index)
 {
 	int	i;
 
@@ -44,6 +44,19 @@ int	word_len(char const *s, char c, int *index)
 		(*index)++;
 	}
 	return (i);
+}
+
+char	**check_allocate(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free (tab[i++]);
+	}
+	free (tab);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -68,18 +81,9 @@ char	**ft_split(char const *s, char c)
 		while (s[i] == c)
 			i++;
 		start = i;
-		tab[j++] = ft_substr(s, start, word_len(s, c, &i));
+		tab[j] = ft_substr(s, start, word_len(s, c, &i));
+		if (!tab[j++])
+			check_allocate (tab);
 	}
 	return (tab);
 }
-
-// #include<stdio.h>
-// int	main(void)
-// {
-// char **tab;
-// // char src[] = "Hello World !";
-// int i = -1;
-// tab = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
-// while (tab[++i])
-// 	printf("tab[%d] = %s\n", i, tab[i]);
-// }

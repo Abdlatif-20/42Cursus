@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:25:24 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/22 00:40:01 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/30 18:00:56 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*str;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	len = ft_strlen(s);
 	str = malloc(len + 1);
@@ -33,12 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	//char	(*f)(unsigned int, char *) = function;
-	char src[] = "hello world";
-	printf("%s\n", ft_strmapi(src, function));
-	printf("%s\n", src);
-}*/

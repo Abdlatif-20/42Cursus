@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:35:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/26 17:28:09 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/30 19:49:07 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,5 @@ int	ft_atoi(const char *str)
 		res = (res * 10) + (*str - '0');
 		str++;
 	}
-	return (res * sign);
+	return (sign * res);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int main()
-// {
-// 	printf("%d\n", ft_atoi("9223372036854775808"));
-// 	printf("%d\n", atoi("9223372036854775808"));
-// }

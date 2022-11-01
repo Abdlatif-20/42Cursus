@@ -1,8 +1,9 @@
-CC = gcc
-FLAGS = -Wall -Wextra -Werror
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
-RM = rm -rf
+RM = rm -f
 AR = ar rc
+HDR = libft.h
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 	ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c\
 	ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c\
@@ -20,18 +21,19 @@ OBJ = ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o\
 	ft_putendl_fd.o ft_putnbr_fd.o\
 
 all : ${NAME}
+
 ${NAME} : ${OBJ}
 	${AR} ${NAME} ${OBJ}
 
-%.o : %.c libft.h
-	${CC} ${FLAGS} -c $< -o $@
+%.o : %.c ${HDR}
+	${CC} ${CFLAGS} -c $< -o $@
 
 fclean : clean
 	${RM} ${NAME}
 
 clean :
-	${RM} ${OBJ} ${B_OBJ}
+	${RM} ${OBJ}
 
 re: fclean all
 
-.PHONY : clean fclean re
+.PHONY : clean fclean

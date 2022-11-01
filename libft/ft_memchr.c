@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:44:54 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/27 23:37:49 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/28 22:39:57 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,3 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	}
 	return (0);
 }
-
-// #include<stdio.h>
-// #include<string.h>
-
-// int main()
-// {
-// 	int sr[] = {1,3};
-// //	printf("befor cherche = %s\n", sr);
-// 	printf("%p\n", memchr(sr, '\200', 10));
-// 	printf("%p\n", ft_memchr(sr, '\200', 10));
-// 	return (0);
-// }
-

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:55:18 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/13 15:15:38 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/31 16:51:28 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+#include<string.h>
 
 char	*ft_strnstr(const char *src, char *to_find, size_t len)
 {
@@ -36,13 +37,3 @@ char	*ft_strnstr(const char *src, char *to_find, size_t len)
 	}
 	return (0);
 }
-/*
-#include<stdio.h>
-#include<string.h>
- int main()
- {
-	 char str[0] = "";
-    // printf("%s\n", ft_strnstr(NULL,NULL, 0));
-     //printf("%s\n", ft_strnstr(str, "", 1));
-	 printf("%s\n", ft_strnstr(((void *)0), "fake", 0));
- }*/

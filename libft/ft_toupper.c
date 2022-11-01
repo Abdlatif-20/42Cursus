@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:10:01 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/09 21:37:28 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:57:20 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,3 @@ int	ft_toupper(int ch)
 		ch -= 32;
 	return (ch);
 }
-// #include<stdio.h>
-// int main()
-// {
-//     char c;
-
-//     c = 'a';
-//     for(; c <= 'z'; c++)
-//         printf("%c = %c\n", c, ft_toupper(c));
-// }

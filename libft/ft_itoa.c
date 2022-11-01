@@ -6,13 +6,13 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:21:08 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/28 00:37:10 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/10/28 16:24:52 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	num_len(long n)
+static int	num_len(long n)
 {
 	int	len;
 
@@ -32,7 +32,7 @@ int	num_len(long n)
 	return (len);
 }
 
-void	convert_to_char(char *str, long nb, int i)
+static void	convert_to_char(char *str, long nb, int i)
 {
 	while (nb > 0)
 	{
@@ -50,7 +50,7 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	i = num_len(nb);
-	str = (char *)malloc(i + 1); // 2's complement
+	str = (char *)malloc(i + 1);
 	if (!str)
 		return (NULL);
 	str[i--] = '\0';
@@ -68,9 +68,3 @@ char	*ft_itoa(int n)
 		convert_to_char(str, nb, i);
 	return (str);
 }
-
-// #include<stdio.h>
-// int main()
-// {
-// 	printf("%s\n", ft_itoa(1056));
-// }

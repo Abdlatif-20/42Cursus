@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 22:39:27 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/10/27 23:22:25 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/11/01 19:05:43 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 # define LIBFT_H
 
-# include <unistd.h>
+# include <unistd.h> // use write
 
-# include <stdlib.h> // use size_t And Malloc
+# include <stdlib.h> /* use size_t And Malloc */ 
 
-//Prototype The Function
+/* Prototype The Function */
 
 //----------------- Part 1 -----------------------------------
-
+   
 int		ft_isalpha(int c);
 int		ft_isdigit(int c );
 int		ft_isalnum(int c);
@@ -44,7 +44,7 @@ void	*ft_memchr(const void *str, int c, size_t n);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t n, size_t size);
-char	*strdup(const char *s);
+char	*ft_strdup(const char *s);
 
 // --------------------- Part 2 ---------------------------------
 
