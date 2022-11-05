@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 01:43:12 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/11/04 12:38:05 by aben-nei         ###   ########.fr       */
+/*   Created: 2022/11/05 19:20:08 by aben-nei          #+#    #+#             */
+/*   Updated: 2022/11/05 21:06:36 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libftprintf.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_print_ptr(char *str)
 {
-	write (fd, &c, 1);
+	int	l;
+
 }

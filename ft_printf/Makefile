@@ -5,10 +5,9 @@ AR = ar -rc
 RM = rm -f
 HDR = libftprintf.h
 
-SRC = ft_printf.c \
-	ft_putnbr_fd.c \
-	ft_putchar_fd.c \
-	ft_putstr_fd.c \
+SRC = ft_printf.c ft_putnbr_fd.c ft_putchar_fd.c \
+	ft_putstr_fd.c ft_putunsignednbr.c ft_check_format.c\
+	ft_print_hexa.c ft_printchar.c\
 
 OBJ = ${SRC:%.c=%.o}
 
@@ -18,13 +17,13 @@ ${NAME} : ${OBJ}
 	${AR} ${NAME} ${OBJ}
 
 %.o : %.c ${HDR}
-	${cc} ${CFLAGS} $< -o $@
-
-clean :
-	${RM} ${OBJ}
+	${cc} ${CFLAGS} -c $< -o $@
 
 fclean : clean
 	${RM} ${NAME}
+
+clean :
+	${RM} ${OBJ}
 
 re : fclean all
 

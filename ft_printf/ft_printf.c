@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:42:16 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/11/03 22:16:02 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/11/05 21:06:47 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,54 +14,36 @@
 
 int	ft_printf(const char *format, ...)
 {
-	va_list ptr;
-	int count;
-	int number;
-	int i;
-	int j;
-	char character;
-	char *str;
+	va_list	ptr;
+	int		i;
+
 	va_start(ptr, format);
-	
 	i = 0;
-	j = 0;
 	while (format[i])
+	{
+		if (format[i] == '%')
 		{
-			if (format[i] == '%' && format[i + 1] == 'd')
-			{
-				number = va_arg(ptr, int);
-				ft_putnbr_fd(number, 1);
-				i++;
-				j++;
-			}
-			else if (format[i] == '%' && format[i + 1] == 'p')
-			 	va_arg(ptr, &format[i]);
-			else if (format[i] == '%' && format[i + 1] == 'c')
-			 {
-				 character = va_arg(ptr, char );
-				 ft_putchar_fd(character, 1);
-			 }
-			else if (format[i] == '%' && format[i + 1] == 's')
-			 {
-			 	str = va_arg(ptr, char *);
-				ft_putstr_fd(str, 1);
-				i++;
-				j++;
-			 }
-			else if (format[i] == '\n')
-			 	ft_putchar_fd('\n', 1);
-			else
-				ft_putchar_fd(format[i], 1);
+			ft_check_format(format[i + 1], ptr);
 			i++;
 		}
-		va_end(ptr);
-	return (i - j);
+		else
+			ft_putchar_fd(format[i], 1);
+		i++;
+	}
+	va_end(ptr);
+	return (0);
 }
 
-int main()
-{
-	int j = ft_printf("|zzzzzz%d%d|", 1, 5);
-	ft_printf("\n%d\n", j);
-	int k = printf("|zzzzzz%d%d|", 1, 5);
-	printf("\n%d", k);
-}
+// int main()
+// {
+// 	// int j = ft_printf("|zzzzzz%d%d|", 1, 5);
+// 	// ft_printf("\n%d\n", j);
+// 	// int k = printf("|zzzzzz%d%d|", 1, 5);
+// 	// printf("\n%d", k);
+// 	// ft_printf("%x", "h");
+// 	ft_printf("test = %X\n", 25455);
+// 	printf("test = %X\n", 25455);
+// 	//  ft_printf("\n%d\n", j);
+// 	// int k = printf("abdo = %x\n", 255);
+// 	//  printf("\n%d\n", k);
+// }
