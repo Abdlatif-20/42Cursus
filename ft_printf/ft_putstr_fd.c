@@ -6,16 +6,23 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 01:44:14 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/11/03 22:14:06 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/11/06 15:31:07 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libftprintf.h"
+#include"ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
+	int	len_string;
+
+	len_string = 0;
 	if (!s)
-		return ;
+	{
+		write (fd, "(null)", 6);
+		return (6);
+	}
 	while (*s)
-		write (fd, s++, 1);
+		len_string += write (fd, s++, 1);
+	return (len_string);
 }

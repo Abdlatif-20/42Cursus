@@ -6,13 +6,14 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 01:43:12 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/11/04 12:38:05 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/11/06 15:31:17 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libftprintf.h"
+#include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
 	write (fd, &c, 1);
+	return (1);
 }
