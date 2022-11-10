@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 02:14:11 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/11/10 20:18:29 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/11/10 20:50:59 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ char	*split_line(char *saved_string)
 
 	i = ft_strlen(saved_string);
 	j = ft_strlen1(saved_string);
-	// printf("%zu", i);
-	// printf("\n%zu\n", j);
-	// printf("%zu\n", i - j);
 	temp = (char *)malloc((i - j) + 2);
 	if (!temp)
 		return (NULL);
@@ -49,7 +46,7 @@ char	*split_line(char *saved_string)
 	}
 	if (saved_string[i1] == '\n')
 		temp[i1] = '\n';
-	temp[i1+1] = '\0';
+	temp[i1 + 1] = '\0';
 	return (temp);
 }
 
@@ -58,7 +55,8 @@ char	*get_line(int fd, char *beff, char *saved_string)
 	ssize_t	nbyte;
 
 	nbyte = 1;
-	saved_string = ft_strdup("");
+	saved_string = malloc(sizeof(char));
+	saved_string[0] = '\0';
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	while (nbyte != 0 && ft_strchr(saved_string, '\n'))
@@ -75,11 +73,10 @@ char	*get_line(int fd, char *beff, char *saved_string)
 		beff[nbyte] = '\0';
 		saved_string = ft_strjoin(saved_string, beff);
 	}
-	// printf ("{%s}\n", saved_string);
 	return (free(beff), saved_string);
 }
 
-char *save_the_rest(char *saved_string)
+char	*save_the_rest(char *saved_string)
 {
 	size_t	i;
 	size_t	j;
@@ -112,20 +109,25 @@ char	*get_next_line(int fd)
 	if (!beff)
 		return (NULL);
 	saved_string = get_line(fd, beff, saved_string);
+	printf ("(%s)", saved_string);
 	if (!saved_string)
 		return (free(beff), NULL);
 	line = split_line(saved_string);
+	printf("-->(%s)", saved_string);
 	saved_string = save_the_rest(saved_string);
+	printf("-->{%s}", saved_string);
 	return (line);
 }
 
-// int	main(void)
-// {
-// 	int		fd;
-// 	char	*str;
+int	main(void)
+{
+	int		fd;
+	// char	*str;
 
-// 	fd = open("file.txt", O_RDWR, 0777);
-// 	str = get_next_line(fd);
-// 	while (str)
-// 		printf("%s", str);
-// }
+	fd = open("file.txt", O_RDWR, 0777);
+	printf("-- >%s", get_next_line(fd));
+	// printf("-- >%s", get_next_line(fd));
+	// printf("-- >%s", get_next_line(fd));
+	// printf("-- >%s", get_next_line(fd));
+	// printf("-- >%s", get_next_line(fd));
+}

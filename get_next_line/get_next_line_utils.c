@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 02:14:22 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/11/10 20:18:47 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/11/10 20:51:12 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (len_src);
 }
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t len_dst;
-	size_t len_src;
-	size_t i;
+	size_t	len_dst;
+	size_t	len_src;
+	size_t	i;
 
 	len_src = ft_strlen(src);
 	if (!dst && !dstsize)
@@ -71,26 +71,6 @@ size_t	ft_strlen1(const char *str)
 	while (str[len] && str[len] != '\n')
 		len++;
 	return (len);
-}
-
-char	*ft_strdup(const char *s)
-{
-	char	*str;
-	size_t	i;
-	size_t	len;
-
-	len = ft_strlen(s);
-	str = malloc(len + 1 * sizeof(char));
-	if (!str)
-		return (NULL);
-	i = -1;
-	while (++i < len)
-	{
-		str[i] = *s;
-		s++;
-	}
-	str[i] = '\0';
-	return (str);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
