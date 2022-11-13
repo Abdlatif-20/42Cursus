@@ -5,84 +5,55 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 22:23:45 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/11/12 12:01:44 by aben-nei         ###   ########.fr       */
+/*   Created: 2022/11/12 20:03:34 by aben-nei          #+#    #+#             */
+/*   Updated: 2022/11/13 05:54:33 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*ft_strdup(char *s)
-{
-	char	*str;
-	size_t	i;
-	size_t	len;
-
-	if (!s)
-		return(0);
-	len = ft_strlen(s);
-	str = (char *)malloc(len + 1);
-	if (!str)
-		return (NULL);
-	i = -1;
-	while (++i < len)
-		str[i] = s[i];
-	str[i] = '\0';
-	return (str);
-}
-
-static char	*ft_storage(char *saved_string)
-{
-	size_t	i;
-	size_t	i2;
-	char	*temp;
-
-	i = ft_strlen(saved_string);
-	i2 = new_strlen(saved_string);
-	temp = (char *)malloc((i - i2) + 1);
-	if (!temp)
-		return (NULL);
-	temp = ft_strdup(&saved_string[i2 + 1]);
-	return (free(saved_string), temp);
-}
-
-static char	*read_line(int fd, char *saved_string)
+static char	*read_line(int fd, char *string)
 {
 	char	*beffer;
 	ssize_t	nbyte;
 
-	nbyte = 1;
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
 	beffer = (char *)malloc(BUFFER_SIZE + 1);
 	if (!beffer)
-		return (NULL);
-	while (nbyte != 0 && ft_strchr(saved_string, '\n'))
+		return (free (string), NULL);
+	while (ft_strchr(string, '\n') == NULL)
 	{
 		nbyte = read(fd, beffer, BUFFER_SIZE);
-		if (nbyte <= 0 && !saved_string)
-			return (free(beffer), free(saved_string), NULL);
+		if (nbyte < 0)
+			return (free(beffer), free(string), NULL);
 		beffer[nbyte] = '\0';
-		saved_string = ft_strjoin(saved_string, beffer);
+		string = ft_strjoin(string, beffer);
+		if (!string)
+			return (free(beffer), NULL);
+		else if (nbyte == 0 && string[0] == '\0')
+			return (free(beffer), free(string), NULL);
+		else if (nbyte == 0)
+			return (free(beffer), string);
 	}
-	return (free(beffer), saved_string);
+	free(beffer);
+	return (string);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*saved_string;
+	static char	*string;
 	char		*line;
-	size_t		i;
+	char		*tmp;
+	size_t		i1;
+	size_t		i2;
 
-		saved_string = ft_strdup("");
-	saved_string = read_line(fd, saved_string);
-	//   printf("-->{%s}", saved_string);
-	if (!*saved_string || !saved_string)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	i = new_strlen(saved_string) + 1;
-	line = ft_substr(saved_string, 0, i);
-	// printf("-->(%s)", line);
-	saved_string = ft_storage(saved_string);
-	//  printf("-->({%s})", saved_string);
+	string = read_line(fd, string);
+	i1 = ft_strlen(string, '\0');
+	i2 = ft_strlen(string, '\n');
+	tmp = string;
+	line = ft_substr(string, 0, i2 + 1);
+	string = ft_substr(string, i2 + 1, (i1 - i2));
+	free(tmp);
 	return (line);
 }

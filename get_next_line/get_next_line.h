@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 02:14:48 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/11/12 09:01:58 by aben-nei         ###   ########.fr       */
+/*   Created: 2022/11/12 20:04:03 by aben-nei          #+#    #+#             */
+/*   Updated: 2022/11/13 01:30:46 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@
 
 char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
-int		ft_strchr(const char *s, int c);
-size_t	ft_strlen(const char *str);
-size_t	new_strlen(const char *str);
+char	*ft_strchr(char *s, char c);
+size_t	ft_strlen(char *str, char c);
 char	*ft_strdup(char *s);
 char	*ft_substr(char *s, unsigned int start, size_t len);
-
 #endif
