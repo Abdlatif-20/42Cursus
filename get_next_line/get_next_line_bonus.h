@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 20:04:03 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/11/15 21:37:34 by aben-nei         ###   ########.fr       */
+/*   Created: 2022/11/13 20:41:05 by aben-nei          #+#    #+#             */
+/*   Updated: 2022/11/15 21:36:48 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE	10
 # endif
 
 # include <stdlib.h>
-# include <fcntl.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <limits.h>
 
 /* ------------------- Prototype Function -------------------*/
 
