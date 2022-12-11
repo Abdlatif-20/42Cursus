@@ -1,0 +1,472 @@
+{
+  "document": {
+    "id": "doc",
+    "name": "New Document",
+    "version": 15.5,
+    "pages": {
+      "page": {
+        "id": "page",
+        "name": "Page 1",
+        "childIndex": 1,
+        "shapes": {
+          "5e73f8a8-08ac-478e-360d-c8fcb8f7169a": {
+            "id": "5e73f8a8-08ac-478e-360d-c8fcb8f7169a",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              201.4,
+              92.76
+            ],
+            "size": [
+              262.84,
+              82.1
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "017e0a77-5421-45a2-29aa-4f921f2f2975": {
+            "id": "017e0a77-5421-45a2-29aa-4f921f2f2975",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 2,
+            "point": [
+              216.26,
+              114.78
+            ],
+            "rotation": 0,
+            "text": "What Is Virtual Machin",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "4e810bc2-cf87-43dc-2d4e-6c51911e5e1f": {
+            "id": "4e810bc2-cf87-43dc-2d4e-6c51911e5e1f",
+            "type": "arrow",
+            "name": "Arrow",
+            "parentId": "page",
+            "childIndex": 3,
+            "point": [
+              317.66,
+              185.69,
+              0.5
+            ],
+            "rotation": 0,
+            "bend": -0.00012021830472906377,
+            "handles": {
+              "start": {
+                "id": "start",
+                "index": 0,
+                "point": [
+                  0,
+                  0
+                ],
+                "canBind": true
+              },
+              "end": {
+                "id": "end",
+                "index": 1,
+                "point": [
+                  0.29,
+                  83.47
+                ],
+                "canBind": true
+              },
+              "bend": {
+                "id": "bend",
+                "index": 2,
+                "point": [
+                  0.14,
+                  41.74
+                ]
+              }
+            },
+            "decorations": {
+              "end": "arrow"
+            },
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "91110713-4636-4573-2a57-be690c256784": {
+            "id": "91110713-4636-4573-2a57-be690c256784",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 4,
+            "point": [
+              139.04,
+              273.52
+            ],
+            "rotation": 0,
+            "text": "is a software to create a multiple (os)\n used virtualisation technology",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "serif",
+              "textAlign": "middle"
+            }
+          },
+          "7a40d5d3-9576-450c-121e-891335d429a7": {
+            "id": "7a40d5d3-9576-450c-121e-891335d429a7",
+            "type": "arrow",
+            "name": "Arrow",
+            "parentId": "page",
+            "childIndex": 5,
+            "point": [
+              326.21,
+              348.78,
+              0.5
+            ],
+            "rotation": 0,
+            "bend": 0.00011860889911432619,
+            "handles": {
+              "start": {
+                "id": "start",
+                "index": 0,
+                "point": [
+                  0,
+                  0
+                ],
+                "canBind": true
+              },
+              "end": {
+                "id": "end",
+                "index": 1,
+                "point": [
+                  0.95,
+                  84.3
+                ],
+                "canBind": true
+              },
+              "bend": {
+                "id": "bend",
+                "index": 2,
+                "point": [
+                  0.48,
+                  42.15
+                ]
+              }
+            },
+            "decorations": {
+              "end": "arrow"
+            },
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "serif"
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "8435398f-04e1-403f-3679-ea3974a240b4": {
+            "id": "8435398f-04e1-403f-3679-ea3974a240b4",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 6,
+            "point": [
+              178.88,
+              442.85
+            ],
+            "size": [
+              285.9,
+              94.69
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "serif"
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "1b1d6ebb-88a8-4ea1-1588-909baaf39b1e": {
+            "id": "1b1d6ebb-88a8-4ea1-1588-909baaf39b1e",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 7,
+            "point": [
+              185.64,
+              463.67
+            ],
+            "rotation": 0,
+            "text": "What is Virtualisation",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1.3202631578947344,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "5880a131-5b5c-418a-1a9d-cb29e04d1b5c": {
+            "id": "5880a131-5b5c-418a-1a9d-cb29e04d1b5c",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 8,
+            "point": [
+              94.44999999999999,
+              637.89
+            ],
+            "rotation": 0,
+            "text": "technology to create a virtual of something\nEx : Storage - Networking - OS ",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "serif",
+              "textAlign": "middle"
+            }
+          },
+          "6f60a216-733e-48d7-3be7-a2132505546e": {
+            "id": "6f60a216-733e-48d7-3be7-a2132505546e",
+            "type": "arrow",
+            "name": "Arrow",
+            "parentId": "page",
+            "childIndex": 9,
+            "point": [
+              310.97,
+              543.55
+            ],
+            "rotation": 0,
+            "bend": 0.00012532683279207772,
+            "handles": {
+              "start": {
+                "id": "start",
+                "index": 0,
+                "point": [
+                  1.26,
+                  0
+                ],
+                "canBind": true
+              },
+              "end": {
+                "id": "end",
+                "index": 1,
+                "point": [
+                  0,
+                  86.34
+                ],
+                "canBind": true,
+                "bindingId": "7e1ccbf7-9e35-4817-29fa-d775cecb0346"
+              },
+              "bend": {
+                "id": "bend",
+                "index": 2,
+                "point": [
+                  0.63,
+                  43.17
+                ]
+              }
+            },
+            "decorations": {
+              "end": "arrow"
+            },
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script"
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "1c0efa87-b6b3-4fff-3a5a-853c21892907": {
+            "id": "1c0efa87-b6b3-4fff-3a5a-853c21892907",
+            "type": "arrow",
+            "name": "Arrow",
+            "parentId": "page",
+            "childIndex": 10,
+            "point": [
+              306.25,
+              723.03,
+              0.5
+            ],
+            "rotation": 0,
+            "bend": 0,
+            "handles": {
+              "start": {
+                "id": "start",
+                "index": 0,
+                "point": [
+                  0,
+                  0
+                ],
+                "canBind": true
+              },
+              "end": {
+                "id": "end",
+                "index": 1,
+                "point": [
+                  1.14,
+                  93.7
+                ],
+                "canBind": true
+              },
+              "bend": {
+                "id": "bend",
+                "index": 2,
+                "point": [
+                  0.57,
+                  46.85
+                ]
+              }
+            },
+            "decorations": {
+              "end": "arrow"
+            },
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script"
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "797b40dd-164b-4984-3bc8-e24d22a802fd": {
+            "id": "797b40dd-164b-4984-3bc8-e24d22a802fd",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 11,
+            "point": [
+              79.21,
+              839.75
+            ],
+            "rotation": 0,
+            "text": "A hypervisor, also known as a virtual machine monitor or VMM,\n is software that creates and runs virtual machines (VMs). \nA hypervisor allows one host computer to support\n multiple guest VMs by virtually sharing its resources, \nsuch as memory and processing. ",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 0.6524198250728864,
+              "font": "sans",
+              "textAlign": "middle"
+            }
+          },
+          "c9413e08-2871-450d-0f42-fd69815770a3": {
+            "id": "c9413e08-2871-450d-0f42-fd69815770a3",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 12,
+            "point": [
+              56.39,
+              831.3
+            ],
+            "size": [
+              477.51,
+              118.44
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "sans"
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          }
+        },
+        "bindings": {
+          "7e1ccbf7-9e35-4817-29fa-d775cecb0346": {
+            "id": "7e1ccbf7-9e35-4817-29fa-d775cecb0346",
+            "type": "arrow",
+            "fromId": "6f60a216-733e-48d7-3be7-a2132505546e",
+            "toId": "5880a131-5b5c-418a-1a9d-cb29e04d1b5c",
+            "handleId": "end",
+            "point": [
+              0.48,
+              0.7
+            ],
+            "distance": 8
+          }
+        }
+      }
+    },
+    "pageStates": {
+      "page": {
+        "id": "page",
+        "selectedIds": [],
+        "camera": {
+          "point": [
+            0,
+            0
+          ],
+          "zoom": 1
+        }
+      }
+    },
+    "assets": {}
+  },
+  "assets": {}
+}
