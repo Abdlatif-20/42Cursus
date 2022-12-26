@@ -6,11 +6,16 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 00:52:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/12/26 16:54:04 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/12/26 20:22:25 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// void	ft_pa_pb(stack *stack_a, stack *stack_b, char *str)
+// {
+	// dvdv
+// }
 
 void	ft_pa_pb(stack *stack_a, stack *stack_b, char *str)
 {
@@ -23,27 +28,23 @@ void	ft_pa_pb(stack *stack_a, stack *stack_b, char *str)
 	stack_a->lenght -= 1;
 	stack_b->lenght += 1;
 	j = stack_b->lenght;
-	if (j < 2)
-	{
 		i = 0;
 		while (i < j)
 		{
 			stack_b->tab[i] = stack_a->tab[i];
 			i++;
 		}
-	}
-	else
-	{
-		i = 0;
-		tmp = stack_b->tab[0];
-		printf("hnaaa j = %d", j);
-		while (i < j)
-		{
-			stack_b->tab[i] = stack_a->tab[i];
-			i++;
-		}
-		stack_b->tab[++i] = tmp;
-	}
+	// else
+	// {
+	// 	tmp = stack_b->tab[i];
+	// 	i = 0;
+	// 	while (i < j - 1)
+	// 	{
+	// 		stack_b->tab[i] = stack_a->tab[i];
+	// 		i++;
+	// 	}
+	// 	stack_b->tab[i] = tmp;
+	// }
 	i = 0;
 	while (i < size - 1)
 	{
