@@ -6,47 +6,54 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:54:30 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/12/23 15:08:33 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/12/26 16:52:43 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "push_swap.h"
+
+void	ft_ss(stack *stack_a, stack *stack_b)
+{
+	ft_sa_sb(stack_a, "sa");
+	ft_sa_sb(stack_b, "sb");
+}
 
 int main(int ac, char **av)
 {
-    int tab[ac - 1];
-    int i;
-    int j;
-    int tmp;
+	stack	stack_a;
+	stack	stack_b;
+	int	i;
 
-    i = 0;
-    j = 1;
-    while (i < ac - 1)
-    {
-        tab[i] = atoi(av[j]);
-        i++;
-        j++;
-    }
-    i = 0;
-    while (i < ac - 1)
-    {
-        if (tab[i] > tab[i + 1])
-        {
-            tmp = tab[i];
-            tab[i] = tab[i + 1];
-            tab[i + 1] = tmp;
-            i = 0;
-        }
-        i++;
-    }
-    i = 0;
-    while (i < ac - 1)
-    {
-        printf("after -->tab[%d] = %d\n", i, tab[i]);
-        i++;
-    }
-    
-    return (0);
+	stack_a.lenght = ac - 1;
+	stack_a.size = ac - 1;
+	stack_b.lenght = 0;
+	stack_b.size = ac - 1;
+	if (ac > 3)
+	{
+		filed_arr(&stack_a, &stack_b, av);
+		i = 0;
+		while (i < stack_a.lenght)
+		{
+			printf("tab[%d] = %d\n", i, stack_a.tab[i]);
+			i++;
+		}
+		//ft_ss(&stack_a, stack_b);
+		ft_pa_pb(&stack_a, &stack_b, "pb");
+		ft_pa_pb(&stack_a, &stack_b, "pb");
+		//ft_pa_pb(&stack_a, &stack_b, "pb");
+		printf("\n----------------------\n");
+		i = 0;
+		while (i < stack_a.lenght)
+		{
+			printf("tab[%d] = %d\n", i, stack_a.tab[i]);
+			i++;
+		}
+		printf("\n----------------------\n");
+		i = 0;
+		while (i < stack_b.lenght)
+		{
+			printf("tab_b[%d] = %d\t", i, stack_b.tab[i]);
+			i++;
+		}
+	}
 }
