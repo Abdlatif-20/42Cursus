@@ -3,54 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 00:52:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/12/26 20:22:25 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/12/27 22:59:41 by abdlatif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	ft_pa_pb(stack *stack_a, stack *stack_b, char *str)
-// {
-	// dvdv
-// }
-
 void	ft_pa_pb(stack *stack_a, stack *stack_b, char *str)
 {
 	int	i;
-	int j;
-	int tmp;
+	int	i2;
 	int	size;
 
-	size = stack_a->size;
-	stack_a->lenght -= 1;
-	stack_b->lenght += 1;
-	j = stack_b->lenght;
-		i = 0;
-		while (i < j)
-		{
-			stack_b->tab[i] = stack_a->tab[i];
-			i++;
-		}
-	// else
-	// {
-	// 	tmp = stack_b->tab[i];
-	// 	i = 0;
-	// 	while (i < j - 1)
-	// 	{
-	// 		stack_b->tab[i] = stack_a->tab[i];
-	// 		i++;
-	// 	}
-	// 	stack_b->tab[i] = tmp;
-	// }
-	i = 0;
-	while (i < size - 1)
+	if (stack_b->lenght == 0)
+		stack_b->tab[0] = stack_a->tab[0];
+	else
 	{
-		stack_a->tab[i] = stack_a->tab[i + 1];
-		i++;
+		i = 1;
+		i2 = 0;
+		while (i < stack_b->lenght - 1)
+			stack_b->tab[i++] = stack_b->tab[i2++];
+		printf("<%d>\n", stack_b->tab[1]);
+		stack_b->tab[0] = stack_b->tab[0];
 	}
+	stack_b->lenght += 1;
+	stack_a->lenght -= 1;
 }
 
 void	ft_sa_sb(stack *stack_a_b, char *str)

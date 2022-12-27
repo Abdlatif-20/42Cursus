@@ -1,0 +1,20 @@
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2022-12-27 20:16:41
+count workspace : /home/abdlatif/Desktop/42Cursus/Push_swap
+total files : 8
+total code lines : 257
+total comment lines : 114
+total blank lines : 38
+
+a.out, it is a binary file.
+instructions.c, code is 126, comment is 43, blank is 13.
+Makefile, code is 0, comment is 0, blank is 0.
+push_swap.c, code is 4, comment is 11, blank is 3.
+push_swap.h, code is 17, comment is 11, blank is 6.
+push_swap222.c, code is 64, comment is 24, blank is 11.
+push_swap_utils.c, code is 42, comment is 14, blank is 4.
+test.c, code is 4, comment is 11, blank is 1.
+===============================================================================
