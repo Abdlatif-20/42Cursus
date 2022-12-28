@@ -6,7 +6,7 @@
 /*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:54:30 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/12/27 22:55:32 by abdlatif         ###   ########.fr       */
+/*   Updated: 2022/12/28 18:33:21 by abdlatif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,12 @@ int main(int ac, char **av)
 		// ft_sa_sb(&stack_a, "sa");
 		ft_pa_pb(&stack_a, &stack_b, "pb");
 		ft_pa_pb(&stack_a, &stack_b, "pb");
+		ft_pa_pb(&stack_a, &stack_b, "pb");
+		ft_pa_pb(&stack_a, &stack_b, "pb");
+		ft_pa_pb(&stack_b, &stack_a, "pa");
+		// ft_pa_pb(&stack_a, &stack_b, "pb");
 		// ft_sa_sb(&stack_a, "sb");
-		printf("\n----------------------\n");
+		printf("\n-----------satck_a after push-----------\n");
 		i = 0;
 		// printf("%d", stack_a.lenght);
 		while (i < stack_a.lenght)
@@ -50,7 +54,7 @@ int main(int ac, char **av)
 			printf("tab[%d] = %d\n", i, stack_a.tab[i]);
 			i++;
 		}
-		printf("\n----------------------\n");
+		printf("\n-----------stack_b-----------\n");
 		i = 0;
 		while (i < stack_b.lenght)
 		{

@@ -6,7 +6,7 @@
 /*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 00:52:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/12/27 23:31:48 by abdlatif         ###   ########.fr       */
+/*   Updated: 2022/12/28 18:31:05 by abdlatif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,33 @@ void	ft_pa_pb(stack *stack_a, stack *stack_b, char *str)
 {
 	int	i;
 	int	i2;
-	int	size;
+	int *tab;
 
-	if (stack_b->lenght == 0)
+	stack_b->lenght += 1;
+	stack_a->lenght -= 1;
+	if (stack_b->lenght == 1)
 		stack_b->tab[0] = stack_a->tab[0];
 	else
 	{
-		i = 1;
-		i2 = 0;
+		tab = (int *)malloc(stack_b->size * sizeof(int));
+		if (!tab)
+			return ;
+		i = 0;
+		i2 = 1;
+		tab[0] = stack_a->tab[0];
 		while (i < stack_b->lenght - 1)
-			stack_b->tab[i++] = stack_b->tab[i2++];
-		printf("<%d>\n", stack_b->tab[1]);
-		stack_b->tab[0] = stack_b->tab[0];
+			tab[i2++] = stack_b->tab[i++];
+		free(stack_b->tab);
+		stack_b->tab = tab;
 	}
-	stack_b->lenght += 1;
-	stack_a->lenght -= 1;
+	i = 1;
+	i2 = 0;
+	while (i2 < stack_a->lenght)
+		stack_a->tab[i2++] = stack_a->tab[i++];
+	if (!strcmp("pa", str))
+		printf("pa\n");
+	else if (!strcmp("pb", str))
+		printf("pb\n");
 }
 
 void	ft_sa_sb(stack *stack_a_b, char *str)
