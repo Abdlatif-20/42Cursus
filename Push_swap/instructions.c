@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 00:52:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2022/12/28 18:31:05 by abdlatif         ###   ########.fr       */
+/*   Updated: 2023/01/03 19:34:15 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,31 +130,41 @@ void	filed_arr(stack *stack_a, stack *stack_b, char **av)
 	}
 }
 
-// int main(int ac, char **av)
-// {
-// 	stack	stack_a;
-// 	stack	stack_b;
-// 	int	i;
+int main(int ac, char **av)
+{
+	stack	stack_a;
+	stack	stack_b;
+	int	i;
 
-// 	stack_a.lenght = ac - 1;
-// 	stack_a.size = ac - 1;
-// 	stack_b.lenght = 0;
-// 	stack_b.size = ac - 1;
-// 	if (ac > 3)
-// 		filed_arr(&stack_a, &stack_b, av);
-// 	i = 0;
-// 	while (i < stack_a.lenght)
-// 	{
-// 		printf("tab[%d] = %d\n", i, stack_a.tab[i]);
-// 		i++;
-// 	}
-// 	ft_sa_sb(&stack_a, "sa");
-// 	//ft_pa_pb(&stack_a, &stack_b, "pb");
-// 	printf("\n----------------------\n");
-// 	i = 0;
-// 	while (i < stack_a.lenght)
-// 	{
-// 		printf("tab[%d] = %d\n", i, stack_a.tab[i]);
-// 		i++;
-// 	}
-// }
+	stack_a.lenght = ac - 1;
+	stack_a.size = ac - 1;
+	stack_b.lenght = 0;
+	stack_b.size = ac - 1;
+	if (ac > 3)
+		filed_arr(&stack_a, &stack_b, av);
+	i = 0;
+	while (i < stack_a.lenght)
+	{
+		printf("tab[%d] = %d\n", i, stack_a.tab[i]);
+		i++;
+	}
+	// ft_sa_sb(&stack_a, "sa");
+	// ft_rra_rrb(&stack_a, "ra");
+	ft_pa_pb(&stack_a, &stack_b, "pb");
+	ft_pa_pb(&stack_a, &stack_b, "pb");
+	ft_pa_pb(&stack_a, &stack_b, "pb");
+	printf("\n----------------------\n");
+	i = 0;
+	while (i < stack_a.lenght)
+	{
+		printf("tab[%d] = %d\n", i, stack_a.tab[i]);
+		i++;
+	}
+	printf("\n---------stack_b-------------\n");
+	i = 0;
+	while (i < stack_b.lenght)
+	{
+		printf("tab[%d] = %d\n", i, stack_b.tab[i]);
+		i++;
+	}
+}
