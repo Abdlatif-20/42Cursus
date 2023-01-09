@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 00:52:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/03 19:34:15 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/07 23:12:25 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,10 +149,10 @@ int main(int ac, char **av)
 		i++;
 	}
 	// ft_sa_sb(&stack_a, "sa");
-	// ft_rra_rrb(&stack_a, "ra");
-	ft_pa_pb(&stack_a, &stack_b, "pb");
-	ft_pa_pb(&stack_a, &stack_b, "pb");
-	ft_pa_pb(&stack_a, &stack_b, "pb");
+	ft_ra_rb(&stack_a, "ra");
+	// ft_pa_pb(&stack_a, &stack_b, "pb");
+	// ft_pa_pb(&stack_a, &stack_b, "pb");
+	// ft_pa_pb(&stack_a, &stack_b, "pb");
 	printf("\n----------------------\n");
 	i = 0;
 	while (i < stack_a.lenght)

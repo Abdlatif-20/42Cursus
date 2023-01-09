@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   easy_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 17:35:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/08 23:54:14 by aben-nei         ###   ########.fr       */
+/*   Created: 2023/01/08 22:22:56 by aben-nei          #+#    #+#             */
+/*   Updated: 2023/01/09 00:18:23 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-long long	ft_atoi(const char *str)
-{
-	long long		res;
-	long long		sign;
 
-	res = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		res = (res * 10) + (*str - '0');
-		str++;
-	}
-	return (sign * res);
-}
+// static void	ft_sort(t_list **stack_a)
+// {
+// 	t_list	*head;
+// 	t_list	*tmp;
+	
+// 	head = *stack_a;
+// 	if ()
+	
+// }
+
+// int	main(int ac, char **av)
+// {
+// 	t_list	*head_a;
+// 	t_list	*head_b;
+	
+// 	head_a = NULL;
+// 	head_b = NULL;
+	
+// 	if (check_string_valid(av))
+// 	{
+// 		filed_arr(av, ac, head_a);
+// 		if (check_doublicate(head_a))
+// 		{
+// 			if (!check_is_sorted(head_a))
+// 				ft_sort(&head_a);
+// 		}
+// 	}
+// }

@@ -6,13 +6,13 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:24:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/06 11:51:09 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/09 00:12:57 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lstnew(long long content)
 {
 	t_list	*p;
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int content)
 	if (!p)
 		return (NULL);
 	p->data = content;
+	p->index = -1;
 	p->next = NULL;
 	return (p);
 }

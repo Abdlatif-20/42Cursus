@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:13:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/07 21:18:20 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/09 00:02:13 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,5 @@ int	check_is_sorted(t_list *stack_a)
 // 	filed_arr(av, ac, &head_a);
 // 	// if (check_doublicate(head_a) == 0)
 // 	// 	return (0);
+// 	printf("%d\n", check_valid(head_a));
 // }

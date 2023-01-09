@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   instriction2.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/08 20:03:25 by aben-nei          #+#    #+#             */
+/*   Updated: 2023/01/08 22:25:09 by aben-nei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	ft_pa_pb(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*head_a;
+	t_list	*head_b;
+	if (!*stack_a)
+		return ;
+	if (!*stack_b)
+	{
+		head_a = (*stack_a)->next;
+		head_b = *stack_a;
+		*stack_b = head_b;
+		(*stack_b)->next = NULL;
+		*stack_a = head_a;
+	}
+	else
+	{
+		head_a = (*stack_a)->next;
+		ft_lstadd_front(stack_b, *stack_a);
+		// (*stack_b)->next = NULL;
+		(*stack_a) = head_a;
+	}
+}
+
+void	ft_rrr(t_list **stack_a, t_list **stack_b)
+{
+	ft_rra_rrb(stack_a);
+	ft_rra_rrb(stack_b);
+}

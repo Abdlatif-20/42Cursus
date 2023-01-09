@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:38:18 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/07 23:31:57 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/09 00:06:22 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@
 
 typedef struct node
 {
-	int			data;
+	long long int		data;
+	int	index;
 	struct node	*next;
 }				t_list;
 
-t_list	*ft_lstnew(int content);
+t_list	*ft_lstnew(long long content);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
@@ -35,7 +36,8 @@ void	ft_ra_rb(t_list **stack_a_b);
 void ft_ra_rb(t_list **stack_a_b);
 int	ft_lstsize(t_list *lst);
 void ft_rra_rrb(t_list **stack_a_b);
-// size_t ft_strlcpy(char *dst, const char *src, size_t size);
-// size_t ft_strlen(const char *str);
-// char *ft_strjoin(char const *s1, char const *s2);
+void ft_pa_pb(t_list **stack_a, t_list **stack_b);
+void	ft_ss(t_list **stack_a, t_list **stack_b);
+void	ft_rr(t_list **stack_a, t_list **stack_b);
+long long ft_atoi(const char *str);
 # endif
