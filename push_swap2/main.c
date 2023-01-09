@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:54:20 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/09 00:37:42 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/09 21:14:12 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,18 @@ void	get_index(t_list *stack_a)
 	}
 }
 
+// int main(int ac, char **av)
+// {
+// 	int	i;
+// 	int num;
+// 	t_list *head_a;
+// 	t_list *head_b;
 
-int main(int ac, char **av)
-{
-	int	i;
-	int num;
-	t_list *head_a;
-	t_list *head_b;
-
-	head_a = NULL;
-	head_b = NULL;
-	i = 0;
-	if (ac == 1)
-		return (0);
-	filed_arr(av, ac, &head_a);
-	get_index(head_a);
-}
+// 	head_a = NULL;
+// 	head_b = NULL;
+// 	i = 0;
+// 	if (ac == 1)
+// 		return (0);
+// 	filed_arr(av, ac, &head_a);
+// 	get_index(head_a);
+// }

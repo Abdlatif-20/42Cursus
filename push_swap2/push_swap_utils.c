@@ -6,17 +6,47 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:13:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/09 00:02:13 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/09 21:40:21 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int check_string_valid(char **av)
+void	get_index1(t_list *stack_a)
+{
+	t_list	*head_a;
+	t_list	*min;
+	int		i;
+
+	head_a = stack_a;
+	min = head_a;
+	while (head_a->next)
+	{
+		while (min->data > head_a->next->data && min->index == -1)
+			min = head_a->next;
+		i = 0;
+			printf("--->%lld<---\n", min->data);
+		if (min->index == -1)
+		{
+			min->index = i++;
+			min = head_a;
+		}
+		// else
+		// 	min = head_a;
+			head_a = head_a->next;
+	}
+	head_a = min;
+	// while (min)
+	// {
+	// 	min = min->next;
+	// }
+
+}
+
+int	check_string_valid(char **av)
 {
 	int i;
 	int i2;
-	char *tab;
 
 	i = 1;
 	while (av[i])
@@ -78,17 +108,16 @@ int	check_is_sorted(t_list *stack_a)
 	return (1);
 }
 
-// int main(int ac, char **av)
-// {
-// 	t_list *head_a;
-// 	t_list *head_b;
-
-// 	head_a = NULL;
-// 	head_b = NULL;
-// 	// if (ac == 1 && !check_string_valid(av))
-// 	// 	return (0);
-// 	filed_arr(av, ac, &head_a);
-// 	// if (check_doublicate(head_a) == 0)
-// 	// 	return (0);
-// 	printf("%d\n", check_valid(head_a));
-// }
+int main(int ac, char **av)
+{
+	t_list *head_a;
+	t_list *head_b;
+	head_a = NULL;
+	head_b = NULL;
+	// if (ac == 1 && !check_string_valid(av))
+	// 	return (0);
+	filed_arr(av, ac, &head_a);
+	// if (check_doublicate(head_a) == 0)
+	// 	return (0);
+	get_index1(head_a);
+}
