@@ -6,22 +6,47 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 22:22:56 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/09 00:18:23 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/10 21:41:02 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
 
-// static void	ft_sort(t_list **stack_a)
-// {
-// 	t_list	*head;
-// 	t_list	*tmp;
+void	ft_sort(t_list **stack_a)
+{
+	t_list	*head;
+	t_list	*tmp;
 	
-// 	head = *stack_a;
-// 	if ()
-	
-// }
+	head = *stack_a;
+	while (head->next->next)
+    {
+        if (head->data < head->next->data)
+        {
+            if (head->data < head->next->next->data)
+            {
+                ft_sa_sb(&head);
+                ft_ra_rb(&head);
+            }
+            else
+                ft_rra_rrb(&head);
+        }
+        else if(head->data > head->next->data)
+        {
+            if (head->data > head->next->next->data && head->next->data > head->next->next->data)
+            {
+                ft_ra_rb(&head);
+                ft_sa_sb(&head);
+            }
+            else if (head->data > head->next->data && head->data > head->next->next->data)
+                ft_ra_rb(&head);
+            else if (head->data > head->next->data && head->data < head->next->next->data)
+                ft_sa_sb(&head);
+        }
+        head = head->next;
+    }
+    *stack_a = head;
+}
 
 // int	main(int ac, char **av)
 // {
