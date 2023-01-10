@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 00:52:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/07 23:12:25 by aben-nei         ###   ########.fr       */
+/*   Updated: 2022/12/31 15:01:09 by abdlatif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_ra_rb(stack *stack_a_b, char *str)
 	}
 	tab[i] = tmp;
 	stack_a_b->tab = tab;
-	free(tab);
+	// free(tab);
 	if (!strcmp("ra", str))
 		printf("ra\n");
 	else if (!strcmp("rb", str))
@@ -105,7 +105,7 @@ void	ft_rra_rrb(stack *stack_a_b, char *str)
 	}
 	tab[0] = tmp;
 	stack_a_b->tab = tab;
-	free(tab);
+	// free(tab);
 	if (!strcmp("rra", str))
 		printf("rra\n");
 	else if (!strcmp("rrb", str))
@@ -130,41 +130,49 @@ void	filed_arr(stack *stack_a, stack *stack_b, char **av)
 	}
 }
 
-int main(int ac, char **av)
-{
-	stack	stack_a;
-	stack	stack_b;
-	int	i;
-
-	stack_a.lenght = ac - 1;
-	stack_a.size = ac - 1;
-	stack_b.lenght = 0;
-	stack_b.size = ac - 1;
-	if (ac > 3)
-		filed_arr(&stack_a, &stack_b, av);
-	i = 0;
-	while (i < stack_a.lenght)
-	{
-		printf("tab[%d] = %d\n", i, stack_a.tab[i]);
-		i++;
-	}
-	// ft_sa_sb(&stack_a, "sa");
-	ft_ra_rb(&stack_a, "ra");
-	// ft_pa_pb(&stack_a, &stack_b, "pb");
-	// ft_pa_pb(&stack_a, &stack_b, "pb");
-	// ft_pa_pb(&stack_a, &stack_b, "pb");
-	printf("\n----------------------\n");
-	i = 0;
-	while (i < stack_a.lenght)
-	{
-		printf("tab[%d] = %d\n", i, stack_a.tab[i]);
-		i++;
-	}
-	printf("\n---------stack_b-------------\n");
-	i = 0;
-	while (i < stack_b.lenght)
-	{
-		printf("tab[%d] = %d\n", i, stack_b.tab[i]);
-		i++;
-	}
-}
+// int main(int ac, char **av)
+// {
+// 	stack	stack_a;
+// 	stack	stack_b;
+// 	int	i;
+// 	stack_a.lenght = ac - 1;
+// 	stack_a.size = ac - 1;
+// 	stack_b.lenght = 0;
+// 	stack_b.size = ac - 1;
+// 	if (ac > 3)
+// 	{
+// 		filed_arr(&stack_a, &stack_b, av);
+// 		i = 0;
+// 		while (i < stack_a.lenght)
+// 		{
+// 			printf("tab[%d] = %d\n", i, stack_a.tab[i]);
+// 			i++;
+// 		}
+// 		// ft_ss(&stack_a, &stack_b);
+// 		// ft_sa_sb(&stack_a, "sa");
+// 		ft_pa_pb(&stack_a, &stack_b, "pb");
+// 		ft_pa_pb(&stack_a, &stack_b, "pb");
+// 		ft_pa_pb(&stack_a, &stack_b, "pb");
+// 		ft_rrr(&stack_a, &stack_b);
+// 		// ft_rrr(&stack_a, &stack_b);
+// 		// ft_pa_pb(&stack_b, &stack_a, "pa");
+// 		// ft_pa_pb(&stack_a, &stack_b, "pb");
+// 		// ft_sa_sb(&stack_a, "sb");
+// 		printf("\n-----------satck_a after push-----------\n");
+		// i = 0;
+		// // printf("%d", stack_a.lenght);
+		// while (i < stack_a.lenght)
+		// {
+		// 	printf("tab[%d] = %d\n", i, stack_a.tab[i]);
+		// 	i++;
+		// }
+// 		printf("\n-----------stack_b-----------\n");
+// 		i = 0;
+// 		while (i < stack_b.lenght)
+// 		{
+// 			printf("tab_b[%d] = %d\n", i, stack_b.tab[i]);
+// 			i++;
+// 		}
+// 		// printf("stack_a_size = %d\nstack_b_size = %d", stack_a.lenght, stack_b.lenght);
+// 	}
+// }
