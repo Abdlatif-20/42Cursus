@@ -33,6 +33,10 @@
     "**/.vscode/**"
   ],
   "files.associations": {
-    "push_swap.h": "c"
+    "push_swap.h": "c",
+    "string": "c",
+    "iosfwd": "c",
+    "stdbool.h": "c",
+    "sstream": "c"
   }
 }

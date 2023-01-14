@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:13:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/10 21:13:59 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/14 01:21:37 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,27 @@ int	check_is_sorted(t_list *stack_a)
 	return (1);
 }
 
-// int main(int ac, char **av)
-// {
-// 	t_list *head_a;
-// 	t_list *head_b;
-// 	head_a = NULL;
-// 	head_b = NULL;
-// 	// if (ac == 1 && !check_string_valid(av))
-// 	// 	return (0);
-// 	filed_arr(av, ac, &head_a);
-// 	// if (check_doublicate(head_a) == 0)
-// 	// 	return (0);
-// 	get_index1(head_a);
-// }
+int main(int ac, char **av)
+{
+	t_list *head_a;
+	t_list *head_b;
+	head_a = NULL;
+	head_b = NULL;
+	// if (ac == 1 && !check_string_valid(av))
+	// 	return (0);
+	filed_arr(av, ac, &head_a);
+	// if (check_doublicate(head_a) == 0)
+	// 	return (0);
+	// check_place_of_node(&head_a);
+	ft_push_chunks(&head_a, &head_b, 5, ac - 1);
+	// while (head_a)
+	// {
+	// 	printf("-->[%lld] = %d\n", head_a->data, head_a->place);
+	// 	head_a = head_a->next;
+	// }
+	while (head_b)
+	{
+		printf("-->[%lld] = %d\n", head_b->data, head_b->place);
+		head_b = head_b->next;
+	}
+}
