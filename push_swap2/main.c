@@ -6,23 +6,27 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:54:20 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/14 01:56:21 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/14 21:09:21 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_place_of_node(t_list **head)
+int	check_place_of_node(t_list **head, t_list *node)
 {
 	t_list	*head_a;
-	int	i = 0;
+	int	place;
 
+	place = 0;
 	head_a = *head;
 	while (head_a)
 	{
-		head_a->place = i++;
+		if (node->data == head_a->data)
+			return (place);
+		place++;
 		head_a = head_a->next;
 	}
+	return (0);
 }
 
 void	filed_arr(char **av, int ac, t_list **head_a)
@@ -70,38 +74,42 @@ void	filed_arr(char **av, int ac, t_list **head_a)
 // 	}
 // }
 
-// int main(int ac, char **av)
-// {
-// 	int	i;
-// 	int num;
-// 	t_list *head_a;
-// 	t_list *head_b;
-// 	t_list *head;
+int main(int ac, char **av)
+{
+	int	i;
+	int num;
+	t_list *head_a;
+	t_list *head;
+	t_list *head_b;
 
-// 	head_a = NULL;
-// 	head_b = NULL;
-// 	i = 0;
-// 	if (ac == 1)
-// 		return (0);
-// 	else if (check_string_valid(av))
-// 	{
-// 		filed_arr(av, ac, &head_a);
-// 		head = head_a;
-// 		if (!check_doublicate(head))
-// 			return (0);
-// 		// else if (ac == 4)
-// 		// 	ft_sort(&head_a);
-// 		// ft_ra_rb(&head);
-// 		// ft_sa_sb(&head);
-// 	}
-// 	// printf("%lld", head_a->data);
-// 	// head = head_a;
-// 	// while (head)
-// 	// {
-// 	// 	printf("%lld\t", head->data);
-// 	// 	head = head->next;
-// 	// }
-// 	ft_chunck_sorting(&head, ac);
-// 	return (0);
-// }
+	head_a = NULL;
+	head_b = NULL;
+	i = 0;
+	if (ac == 1)
+		return (0);
+	else if (check_string_valid(av))
+	{
+		filed_arr(av, ac, &head_a);
+		if (!check_doublicate(head_a))
+			return (0);
+		// else if (ac == 4)
+		// 	ft_sort(&head_a);
+		// ft_ra_rb(&head);
+		// ft_sa_sb(&head);
+	}
+	// printf("%lld", head_a->data);
+	// head = head_a;
+	// int a = check_place_of_node(&head_a, head_a->next->next);
+	// ft_sort(&head_a, &head_b, ft_lstsize(head_a));
+	// head = head_b;
+	// while (head)
+	// {
+	// 	printf("%lld\t", head->data);
+	// 	head = head->next;
+	// }
+	get_index(head_a);
+	int a = ft_check_index(head_a, 4);
+	// printf("%lld", a.data);
+	return (0);
+}
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 16:28:00 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/13 19:19:19 by aben-nei         ###   ########.fr       */
+/*   Created: 2023/01/14 22:16:54 by aben-nei          #+#    #+#             */
+/*   Updated: 2023/01/14 22:17:32 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,38 +28,38 @@ void	new_min(t_list **stack_a, t_list **min)
 	}
 }
 
-// void	get_index(t_list *stack_a)
-// {
-// 	t_list	*head_a;
-// 	t_list	*min;
-// 	t_list *tmp;
-// 	int		i;
-// 	int		size;
+void	get_index(t_list *stack_a)
+{
+	t_list	*head_a;
+	t_list	*min;
+	t_list *tmp;
+	int		i;
+	int		size;
 
-// 	head_a = stack_a;
-// 	i = 0;
-// 	size = ft_lstsize(stack_a);
-// 	min = head_a;
-// 	tmp = head_a;
-// 	while (size--)
-// 	{
-// 		while (tmp->next)
-// 		{
-// 			while (min->data > tmp->next->data && tmp->next->index == -1)
-// 				min = tmp->next;
-// 			tmp = tmp->next;
-// 		}
-// 		if (min->index == -1)
-// 			min->index = i++;
-// 		tmp = head_a;
-// 		new_min(&tmp, &min);
-// 	}
-// 	// while (head_a)
-// 	// {
-// 	// 	printf("-->[%lld] = %d\n", head_a->data, head_a->index);
-// 	// 	head_a = head_a->next;
-// 	// }
-// }
+	head_a = stack_a;
+	i = 0;
+	size = ft_lstsize(stack_a);
+	min = head_a;
+	tmp = head_a;
+	while (size--)
+	{
+		while (tmp->next)
+		{
+			while (min->data > tmp->next->data && tmp->next->index == -1)
+				min = tmp->next;
+			tmp = tmp->next;
+		}
+		if (min->index == -1)
+			min->index = i++;
+		tmp = head_a;
+		new_min(&tmp, &min);
+	}
+	// while (head_a)
+	// {
+	// 	printf("-->[%lld] = %d\n", head_a->data, head_a->index);
+	// 	head_a = head_a->next;
+	// }
+}
 
 // int main(int ac, char **av)
 // {

@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:14:20 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/08 20:02:58 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/14 19:39:27 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	ft_ra_rb(t_list **stack_a_b)
 	last->next = head;
 	head->next = NULL;
 	(*stack_a_b) = temp;
-	// printf("--->%d", first->data);
 }
 void	ft_rr(t_list **stack_a, t_list **stack_b)
 {
@@ -65,7 +64,6 @@ void	ft_rra_rrb(t_list **stack_a_b)
 	
 	while (temp->next->next != NULL)
 		temp = temp->next;
-	// printf("--->%d ", temp->data);
 	temp->next = NULL;
 	last->next = head;
 	*stack_a_b = last;
