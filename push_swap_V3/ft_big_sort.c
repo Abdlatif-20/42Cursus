@@ -6,83 +6,138 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:26:38 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/15 01:17:54 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/16 21:30:00 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	ft_big_sort(t_list **head_a, t_list **head_b)
-// {
-// 	t_list	*stack_a;
-// 	// int		j = 1,i = 0;
-// 	// int		size;
-
-// 	stack_a = *head_a;
-// 	get_index(stack_a);
-// 	// while (stack_a)
-// 	// {
-// 	// 	while (i < 8)
-// 	// 	{
-// 	// 		// j>>i;
-// 	// 		size = ft_lstsize(*head_a);
-// 	// 		// while (size--)
-// 	// 		// {
-// 	// 		// 	if ((stack_a->index & j) == 0)
-					
-// 	// 		// }
-				
-// 	// 	}
-// 	// }
+static int check_position(t_list *list, int max)
+{
+	t_list *head;
+	int pos;
 	
-// }
-void	ft_sorting(t_list **a, t_list **b)
-{
-	int size = ft_lstsize(*a);
-	for (int i = 0; !check_is_sorted(*a); ++i)
+	pos = 0;
+	head = list;
+	while (head)
 	{
-		for (int j = 0; j < size; ++j)
-		{
-			// char c = j + '0';
-			int num = (*a)->index;
-			if ((num >> i) & 1)
-				ft_ra_rb(a);
-			else
-				ft_pa_pb(a, b);
-		}
-		while (*b)
-			ft_pa_pb(b, a);
+		if (head->index < max)
+			return (pos);
+		head = head->next;
+		pos++;
 	}
-
+	return (pos);
 }
 
-int main(int ac, char **av)
+static int	pos_of_max(t_list *stack_b)
 {
-	int i;
-	t_list *head_a;
-	// t_list *head;
-	t_list *head_b;
+	int pos;
+	int high;
+	
+	high = ft_lstsize(stack_b) - 1;
+	pos = 0;
 
-	head_a = NULL;
-	head_b = NULL;
-	i = 0;
-	if (ac == 1)
-		return (0);
-	filed_arr(av, ac, &head_a);
-	get_index(head_a);
-	// printf("%d", head_a->index);
-	ft_sorting(&head_a, &head_b);
-	// printf("%d\n", ft_lstsize(head_a));
-	// ft_pa_pb(&head_a, &head_b);
-	// printf("%d\n", ft_lstsize(head_a));
-	// ft_pa_pb(&head_b, &head_a);
-	// 	while (head_b)
-	// {
-	// 	printf("-->[%lld]\n", head_b->data);
-	// 	head_b = head_b->next;
-	// }
-	if (check_is_sorted(head_a))
-		printf("is sorted");
-	// printf("%d", check_is_sorted(head_a));
-	return (0);
+	while (stack_b)
+	{
+		if (stack_b->index == high)
+			return (pos);
+		stack_b = stack_b->next;
+		pos++;
+	}
+	return (pos);
 }
+
+static void	finaly_sort(t_list **stack_a, t_list **stack_b)
+{
+	int size;
+	int high;
+
+	while (ft_lstsize(*stack_b))
+	{
+		size = ft_lstsize(*stack_b);
+		high = ft_lstsize(*stack_b) - 1;
+		if(ft_lstsize(*stack_b) && pos_of_max(*stack_b) > size / 2 && (*stack_b)->index != high)
+		{
+			while ((*stack_b)->index != high)
+				ft_rra_rrb(stack_b, "rrb\n");
+		}
+		else
+		{
+			while ((*stack_b)->index != high)
+				ft_ra_rb(stack_b, "rb\n");
+		}
+		if (ft_lstsize(*stack_b) && (*stack_b)->index == high)
+			ft_pa_pb(stack_b, stack_a, "pa\n");
+	}
+}
+
+void	ft_big_sort1(t_list **stack_a, t_list **stack_b, int max)
+{
+	int i = -1;
+	int a = 27;
+
+	while (*stack_a)
+	{
+		while (++i < max && *stack_a)
+		{
+			while (check_position((*stack_a), max) < max / 2 && (*stack_a)->index > max)
+				ft_ra_rb(stack_a, "ra\n");
+			while (check_position((*stack_a), max) > max / 2 && (*stack_a)->index > max)
+				ft_rra_rrb(stack_a, "rra\n");
+			if (*stack_a)
+			{
+				if ((*stack_a)->index > max - a)
+				{
+					ft_pa_pb(stack_a, stack_b, "pb\n");
+					ft_ra_rb(stack_b, "rb\n");
+				}
+				else
+					ft_pa_pb(stack_a, stack_b, "pb\n");
+			}
+		}
+		max += 55;
+	}
+	finaly_sort(stack_a, stack_b);
+}
+
+// int main(int ac, char **av)
+// {
+// 	int	i;
+// 	int max = 55;
+// 	t_list *head_a;
+// 	t_list *head_b;
+// 	t_list *head;
+
+// 	head_a = NULL;
+// 	head_b = NULL;
+// 	i = 0;
+// 	if (ac == 1)
+// 		return (0);
+// 	else if (check_string_valid(av))
+// 	{
+// 		filed_arr(av, ac, &head_a);
+// 		// head = head_a;
+// 		// if (!check_doublicate(head))
+// 		// 	return (0);
+// 		// else if (ac < 5 && !check_is_sorted(head))
+// 		// {
+// 		// }
+// 		// ft_sa_sb(&head);
+// 	}
+// 	head = head_a;
+// 	get_index(head);
+// 	// ft_sort(&head);
+// 	ft_big_sort1(&head, &head_b, max);
+// 	// if(check_is_sorted(head_a))
+// 	// 	printf("ok\n");
+// 	// ft_ra_rb(&head);
+// 	// head = head_a;
+// 	// while (head)
+// 	// {
+// 	// 	printf("[%lld]  = %d\n", head->data, head->index);
+// 	// 	head = head->next;
+// 	// }
+// 	// head = head_a;
+// 	// printf("--->%d", check_position(head, max));
+// 	return (0);
+// }

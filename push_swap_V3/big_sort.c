@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 00:10:43 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/16 06:16:30 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/16 21:21:31 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int check_position(t_list *list, int max)
 	while (head)
 	{
 		if (head->index < max)
-		{
-			// printf("data = %lld\n", head->data);
 			return (pos);
-		}
 		head = head->next;
 		pos++;
 	}
@@ -62,59 +59,40 @@ void	finaly_sort(t_list **stack_a, t_list **stack_b)
 		if(ft_lstsize(*stack_b) && pos_of_max(*stack_b) > size / 2 && (*stack_b)->index != high)
 		{
 			while ((*stack_b)->index != high)
-			{
-				ft_rra_rrb(stack_b);
-				printf("rrb\n");
-			}
+				ft_rra_rrb(stack_b, "rrb\n");
 		}
 		else
 		{
 			while ((*stack_b)->index != high)
-			{
-				ft_ra_rb(stack_b);
-				printf("rb\n");
-			}
+				ft_ra_rb(stack_b, "rb\n");
 		}
 		if (ft_lstsize(*stack_b) && (*stack_b)->index == high)
-		{
-			ft_pa_pb(stack_b, stack_a);
-			printf("pa\n");
-		}
+			ft_pa_pb(stack_b, stack_a, "pa\n");
 	}
 }
 
 void	ft_big_sort(t_list **stack_a, t_list **stack_b, int max)
 {
 	int	i = -1;
+	int	a = 10;
 
 	while (*stack_a)
 	{
 		while (++i < max && *stack_a)
 		{
 			while (check_position((*stack_a), max) < max / 2 && (*stack_a)->index > max)
-			{
-				ft_ra_rb(stack_a);
-				printf("ra\n");
-			}
+				ft_ra_rb(stack_a, "ra\n");
 			while (check_position((*stack_a), max) > max / 2 && (*stack_a)->index > max)
-			{
-				ft_rra_rrb(stack_a);
-				printf("rra\n");
-			}
+				ft_rra_rrb(stack_a, "rra\n");
 			if (*stack_a)
 			{
-				if((*stack_a)->index > max - 10)
+				if((*stack_a)->index > max - a)
 				{
-					ft_pa_pb(stack_a, stack_b);
-					printf("pb\n");
-					ft_ra_rb(stack_b);
-					printf("rb\n");
+					ft_pa_pb(stack_a, stack_b, "pb\n");
+					ft_ra_rb(stack_b, "rb\n");
 				}
 				else
-				{
-					ft_pa_pb(stack_a, stack_b);
-					printf("pb\n");
-				}
+					ft_pa_pb(stack_a, stack_b, "pb\n");
 			}
 		}
 		max +=20;

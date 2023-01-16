@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:23:03 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/14 22:23:05 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/16 15:20:53 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,15 @@ void	new_min(t_list **stack_a, t_list **min)
 
 void	get_index(t_list *stack_a)
 {
-	t_list	*head_a;
 	t_list	*min;
 	t_list *tmp;
 	int		i;
 	int		size;
 
-	head_a = stack_a;
 	i = 0;
 	size = ft_lstsize(stack_a);
-	min = head_a;
-	tmp = head_a;
+	min = stack_a;
+	tmp = stack_a;
 	while (size--)
 	{
 		while (tmp->next)
@@ -51,7 +49,7 @@ void	get_index(t_list *stack_a)
 		}
 		if (min->index == -1)
 			min->index = i++;
-		tmp = head_a;
+		tmp = stack_a;
 		new_min(&tmp, &min);
 	}
 }

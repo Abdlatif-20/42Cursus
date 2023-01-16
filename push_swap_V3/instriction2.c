@@ -6,13 +6,13 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:18:45 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/16 03:29:10 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/16 15:11:41 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_pa_pb(t_list **stack_a, t_list **stack_b)
+void	ft_pa_pb(t_list **stack_a, t_list **stack_b, char *str)
 {
 	t_list	*head_a;
 	t_list	*head_b;
@@ -32,10 +32,11 @@ void	ft_pa_pb(t_list **stack_a, t_list **stack_b)
 		ft_lstadd_front(stack_b, *stack_a);
 		(*stack_a) = head_a;
 	}
+	ft_putstr_fd(str);
 }
 
 void	ft_rrr(t_list **stack_a, t_list **stack_b)
 {
-	ft_rra_rrb(stack_a);
-	ft_rra_rrb(stack_b);
+	ft_rra_rrb(stack_a, "rra");
+	ft_rra_rrb(stack_b, "rrb");
 }

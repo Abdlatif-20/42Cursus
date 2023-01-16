@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 22:22:56 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/11 11:15:55 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/16 20:08:04 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,27 @@ void	ft_sort(t_list **stack_a)
 		{
 			if (head->data < head->next->next->data)
 			{
-				ft_sa_sb(&head);
-				ft_ra_rb(&head);
+				ft_sa_sb(&head, "sa\n");
+				ft_ra_rb(&head, "ra\n");
 				break;
 			}
-				ft_rra_rrb(&head);
+				ft_rra_rrb(&head, "rra\n");
 				break;
 		}
 		else if(head->data > head->next->data)
 		{
 			if (head->next->data > head->next->next->data)
 			{
-				ft_ra_rb(&head);
-				ft_sa_sb(&head);
+				ft_ra_rb(&head, "ra\n");
+				ft_sa_sb(&head, "sa\n");
 				break;
 			}
 			else if (head->data > head->next->next->data)
 			{
-				ft_ra_rb(&head);
+				ft_ra_rb(&head, "ra\n");
 				break;
 			}
-			ft_sa_sb(&head);
+			ft_sa_sb(&head, "sa\n");
 				break;
 		}
 		head = head->next;
