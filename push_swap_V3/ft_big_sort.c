@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:26:38 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/16 21:30:00 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/17 14:47:25 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,8 +128,8 @@ void	ft_big_sort1(t_list **stack_a, t_list **stack_b, int max)
 // 	get_index(head);
 // 	// ft_sort(&head);
 // 	ft_big_sort1(&head, &head_b, max);
-// 	// if(check_is_sorted(head_a))
-// 	// 	printf("ok\n");
+// 	if(check_is_sorted(head_a))
+// 		printf("ok\n");
 // 	// ft_ra_rb(&head);
 // 	// head = head_a;
 // 	// while (head)

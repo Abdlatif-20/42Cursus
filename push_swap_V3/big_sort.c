@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 00:10:43 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/16 21:21:31 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/17 15:07:23 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	finaly_sort(t_list **stack_a, t_list **stack_b)
 void	ft_big_sort(t_list **stack_a, t_list **stack_b, int max)
 {
 	int	i = -1;
-	int	a = 10;
+	int	a = 12;
 
 	while (*stack_a)
 	{
@@ -95,7 +95,7 @@ void	ft_big_sort(t_list **stack_a, t_list **stack_b, int max)
 					ft_pa_pb(stack_a, stack_b, "pb\n");
 			}
 		}
-		max +=20;
+		max +=25;
 	}
 	finaly_sort(stack_a, stack_b);
 }
@@ -103,7 +103,7 @@ void	ft_big_sort(t_list **stack_a, t_list **stack_b, int max)
 int main(int ac, char **av)
 {
 	int	i;
-	int max = 20;
+	int max = 25;
 	t_list *head_a;
 	t_list *head_b;
 	t_list *head;
