@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:56 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/16 15:09:36 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/18 03:24:33 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,6 @@ void		get_index(t_list *stack_a);
 void ft_putstr_fd(char *s);
 size_t ft_strlen(const char *str);
 void ft_sort(t_list **stack_a);
+int pos_of_max(t_list *stack_b);
+int pos_of_prv_max(t_list *stack_b);
 # endif

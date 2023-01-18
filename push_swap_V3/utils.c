@@ -6,11 +6,59 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:23:03 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/16 15:20:53 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/18 03:23:35 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	pos_of_prv_max(t_list *stack_b)
+{
+	int pos;
+	int prev_high;
+	
+	prev_high = ft_lstsize(stack_b) - 2;
+	pos = 0;
+
+	while (stack_b)
+	{
+		if (stack_b->index == prev_high)
+			return (pos);
+		stack_b = stack_b->next;
+		pos++;
+	}
+	return (pos);
+}
+
+int	instrection_of_max(t_list *stack_b)
+{
+	t_list	*head;
+	int pos = pos_of_max(stack_b);
+	int inst;
+
+	head = stack_b;
+	int size = ft_lstsize(head);
+		if (pos > size / 2)
+			inst = size - pos;
+		else
+			inst = pos;
+	return (inst);
+}
+
+int	instrection_of_prev_max(t_list *stack_b)
+{
+	t_list	*head;
+	int pos = pos_of_prv_max(stack_b);
+	int inst;
+
+	head = stack_b;
+	int size = ft_lstsize(head);
+		if (pos > size / 2)
+			inst = size - pos;
+		else
+			inst = pos;
+	return (inst);
+}
 
 void	new_min(t_list **stack_a, t_list **min)
 {
