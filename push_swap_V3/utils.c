@@ -6,66 +6,71 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:23:03 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/18 03:23:35 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/19 18:14:47 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	pos_of_prv_max(t_list *stack_b)
+int	get_index_of_max(t_list *stack)
 {
-	int pos;
-	int prev_high;
-	
-	prev_high = ft_lstsize(stack_b) - 2;
-	pos = 0;
+	t_list *max;
+	t_list *tmp;
 
-	while (stack_b)
+	max = stack;
+	tmp = stack;
+	while (tmp->next)
 	{
-		if (stack_b->index == prev_high)
-			return (pos);
-		stack_b = stack_b->next;
-		pos++;
+		if (max->index < tmp->next->index)
+			max = tmp->next;
+		tmp = tmp->next;
 	}
-	return (pos);
+	return (max->index);
 }
 
-int	instrection_of_max(t_list *stack_b)
+int	get_index_of_prev_max(t_list *stack)
 {
-	t_list	*head;
-	int pos = pos_of_max(stack_b);
-	int inst;
+	t_list *max;
+	t_list *tmp;
 
-	head = stack_b;
-	int size = ft_lstsize(head);
-		if (pos > size / 2)
-			inst = size - pos;
-		else
-			inst = pos;
-	return (inst);
+	max = stack;
+	tmp = stack;
+	while (tmp->next)
+	{
+		if (max->index < tmp->next->index && max->index < get_index_of_max(stack))
+			max = tmp->next;
+		tmp = tmp->next;
+	}
+	return (max->index);
 }
 
-int	instrection_of_prev_max(t_list *stack_b)
+int	num_of_instrection(int size_of_list, int pos)
 {
-	t_list	*head;
-	int pos = pos_of_prv_max(stack_b);
-	int inst;
-
-	head = stack_b;
-	int size = ft_lstsize(head);
-		if (pos > size / 2)
-			inst = size - pos;
-		else
-			inst = pos;
-	return (inst);
+	int instr;
+	
+	if (pos > size_of_list / 2)
+		instr = (size_of_list - pos) + 1;
+	else
+		instr = pos;
+	return (instr);
 }
+
+// int	instrection_of_prev_max(int size_of_list, int pos_of_prev_max)
+// {
+// 	int instr;
+// 	if (pos_of_prev_max > size_of_list / 2)
+// 		instr = (size_of_list - pos_of_prev_max) - 1;
+// 	else
+// 		instr = pos_of_prev_max - 1;
+// 	return (instr);
+// }
 
 void	new_min(t_list **stack_a, t_list **min)
 {
 	t_list	*head_a;
 	
 	head_a = *stack_a;
-	while (head_a->next)
+	while (head_a)
 	{
 		if (head_a->index == -1)
 		{
