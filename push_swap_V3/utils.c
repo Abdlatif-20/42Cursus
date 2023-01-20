@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:23:03 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/19 18:14:47 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/20 06:16:45 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,22 @@ int	get_index_of_max(t_list *stack)
 	return (max->index);
 }
 
-int	get_index_of_prev_max(t_list *stack)
+// int	get_index_of_prev_max(t_list *stack)
+// {
+// 	int max;
+// 	t_list *tmp;
+// 	max = 0;
+// 	tmp = stack;
+// 	while (tmp)
+// 	{
+// 		if (max < tmp->index && tmp->index != get_index_of_max(stack))
+// 			max = tmp->index;
+// 		tmp = tmp->next;
+// 	}
+// 	return (max);
+// }
+
+int get_index_of_prev_max(t_list *stack)
 {
 	t_list *max;
 	t_list *tmp;
@@ -37,13 +52,14 @@ int	get_index_of_prev_max(t_list *stack)
 	tmp = stack;
 	while (tmp->next)
 	{
-		if (max->index < tmp->next->index && max->index < get_index_of_max(stack))
+		if (max->index == get_index_of_max(stack))
+			max = max->next;
+		if (max->index < tmp->next->index && tmp->next->index < get_index_of_max(stack))
 			max = tmp->next;
 		tmp = tmp->next;
 	}
 	return (max->index);
 }
-
 int	num_of_instrection(int size_of_list, int pos)
 {
 	int instr;
@@ -54,16 +70,6 @@ int	num_of_instrection(int size_of_list, int pos)
 		instr = pos;
 	return (instr);
 }
-
-// int	instrection_of_prev_max(int size_of_list, int pos_of_prev_max)
-// {
-// 	int instr;
-// 	if (pos_of_prev_max > size_of_list / 2)
-// 		instr = (size_of_list - pos_of_prev_max) - 1;
-// 	else
-// 		instr = pos_of_prev_max - 1;
-// 	return (instr);
-// }
 
 void	new_min(t_list **stack_a, t_list **min)
 {

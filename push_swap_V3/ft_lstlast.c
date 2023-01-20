@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:21:54 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/14 22:21:57 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/20 10:15:10 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,3 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-// #include<stdio.h>
-// int main()
-// {
-// 	t_list *N1 = ft_lstnew("Hello");
-// 	t_list *N2 = ft_lstnew("World");
-// 	t_list *N3 = ft_lstnew("1337");
-// 	N1->next = N2;
-// 	N2->next = N3;
-// 	t_list *m = ft_lstlast(N1);
-// 	printf("%s\n", m->content);
-// }
