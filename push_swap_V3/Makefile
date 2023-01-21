@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+         #
+#    By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 23:00:48 by aben-nei          #+#    #+#              #
-#    Updated: 2023/01/20 12:38:34 by aben-nei         ###   ########.fr        #
+#    Updated: 2023/01/21 00:56:57 by abdlatif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc -g
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 RM = rm -f

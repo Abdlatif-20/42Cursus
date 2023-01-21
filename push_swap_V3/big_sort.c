@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 00:10:43 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/20 07:22:28 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/21 00:01:45 by abdlatif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ int	position(t_list *stack_b,int index)
 
 void	back1(t_list **stack_a, t_list **stack_b)
 {
-	int pos_max;
+	// int pos_max;
 	int pos_prev_max;
 	int size;
 	
-	pos_max = position(*stack_b, get_index_of_max(*stack_b));
+	// pos_max = position(*stack_b, get_index_of_max(*stack_b));
 	pos_prev_max = position(*stack_b, get_index_of_max(*stack_b));
 	size = ft_lstsize(*stack_b); 
 	if (pos_prev_max > size / 2)
