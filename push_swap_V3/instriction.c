@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:18:38 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/16 15:15:31 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/21 22:08:07 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_sa_sb(t_list **stack_a_b, char *str)
 	t_list	*first;
 	t_list	*second;
 
-	if (!stack_a_b || !(*stack_a_b)->next)
+	if (!*stack_a_b || !(*stack_a_b)->next)
 		return ;
 	first = *stack_a_b;
 	second = (*stack_a_b)->next;
@@ -29,10 +29,11 @@ void	ft_sa_sb(t_list **stack_a_b, char *str)
 	ft_putstr_fd(str);
 }
 
-void	ft_ss(t_list **stack_a, t_list **stack_b)
+void	ft_ss(t_list **stack_a, t_list **stack_b, char *str)
 {
-	ft_sa_sb(stack_a, "sa\n");
-	ft_sa_sb(stack_b, "sb\n");
+	ft_sa_sb(stack_a, "");
+	ft_sa_sb(stack_b, "");
+	ft_putstr_fd(str);
 }
 
 
@@ -53,10 +54,11 @@ void	ft_ra_rb(t_list **stack_a_b, char *str)
 	(*stack_a_b) = temp;
 	ft_putstr_fd(str);
 }
-void	ft_rr(t_list **stack_a, t_list **stack_b)
+void	ft_rr(t_list **stack_a, t_list **stack_b, char *str)
 {
-	ft_ra_rb(stack_a, "ra\n");
-	ft_ra_rb(stack_b, "rb\n");
+	ft_ra_rb(stack_a, "");
+	ft_ra_rb(stack_b, "");
+	ft_putstr_fd(str);
 }
 
 void	ft_rra_rrb(t_list **stack_a_b, char *str)
@@ -65,7 +67,7 @@ void	ft_rra_rrb(t_list **stack_a_b, char *str)
 	t_list	*last;
 	t_list	*temp;
 	
-	if (!stack_a_b || !(*stack_a_b)->next)
+	if (!*stack_a_b || !(*stack_a_b)->next)
 		return ;
 	head = *stack_a_b;
 	temp = *stack_a_b;

@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:18:45 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/16 15:11:41 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:18:11 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_pa_pb(t_list **stack_a, t_list **stack_b, char *str)
 		head_b = *stack_a;
 		*stack_b = head_b;
 	
-		(*stack_b)->next = NULL;//seg
+		(*stack_b)->next = NULL;
 		*stack_a = head_a;
 	}
 	else

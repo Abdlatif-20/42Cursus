@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 00:10:43 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/21 00:01:45 by abdlatif         ###   ########.fr       */
+/*   Updated: 2023/01/21 19:59:16 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,18 @@ int	position(t_list *stack_b,int index)
 
 void	back1(t_list **stack_a, t_list **stack_b)
 {
-	// int pos_max;
 	int pos_prev_max;
 	int size;
 	
-	// pos_max = position(*stack_b, get_index_of_max(*stack_b));
-	pos_prev_max = position(*stack_b, get_index_of_max(*stack_b));
+	pos_prev_max = position(*stack_b, get_index_of_prev_max(*stack_b));
 	size = ft_lstsize(*stack_b); 
 	if (pos_prev_max > size / 2)
-		while (position(*stack_b, get_index_of_max(*stack_b)) > 0)
+		while (position(*stack_b, get_index_of_prev_max(*stack_b)) > 0)
 			ft_rra_rrb(stack_b, "rrb\n");
 	else
-		while (position(*stack_b, get_index_of_max(*stack_b)) > 0)
+		while (position(*stack_b, get_index_of_prev_max(*stack_b)) > 0)
 			ft_ra_rb(stack_b, "rb\n");		
-	if (!position(*stack_b, get_index_of_max(*stack_b)))
+	if (!position(*stack_b, get_index_of_prev_max(*stack_b)))
 		ft_pa_pb(stack_b, stack_a, "pa\n");
 	while (position(*stack_b, get_index_of_max(*stack_b)) > 0 && position(*stack_b, get_index_of_max(*stack_b)) < size / 2)
 		ft_ra_rb(stack_b, "rb\n");
@@ -97,36 +95,31 @@ static void	finaly_sort_100(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-void	ft_big_sort_100(t_list **stack_a, t_list **stack_b, int chunk)
+void	ft_big_sort_100(t_list **stack_a, t_list **stack_b)
 {
-	int	i = -1;
-	int	a = chunk / 2;
+	int chunks;
+	int i;
+	int nb;
+	int index_chunks;
 
-	while (*stack_a)
+	chunks = ft_lstsize(*stack_a) / 5;
+	index_chunks = 0;
+	while (ft_lstsize(*stack_a))
 	{
-		if (ft_lstsize(*stack_a) == 50)
-			chunk = ft_lstsize(*stack_a) / 2;
-		while (++i < chunk && *stack_a)
+		i = -1;
+		index_chunks += chunks;
+		while (++i < chunks && (*stack_a))
 		{
-			while (check_position((*stack_a), chunk) < ft_lstsize(*stack_a) / 2 && (*stack_a)->index > chunk)
-				ft_ra_rb(stack_a, "ra\n");
-			while (check_position((*stack_a), chunk) >= ft_lstsize(*stack_a) / 2 && (*stack_a)->index > chunk)
-				ft_rra_rrb(stack_a, "rra\n");
-			if (*stack_a)
+			nb = (*stack_a)->index;
+			if (nb < index_chunks)
 			{
-				if ((*stack_a)->index > chunk - a)
-				{
-					ft_pa_pb(stack_a, stack_b, "pb\n");
+				ft_pa_pb(stack_a, stack_b, "pb\n");
+				if (nb >= index_chunks - (chunks / 2))
 					ft_ra_rb(stack_b, "rb\n");
-				}
-				else
-					ft_pa_pb(stack_a, stack_b, "pb\n");
 			}
+			else
+				ft_ra_rb(stack_a, "ra\n");
 		}
-		if (ft_lstsize(*stack_a) > 50)
-			chunk += 20;
-		else
-			chunk += 18;
 	}
 	finaly_sort_100(stack_a, stack_b);
 }
