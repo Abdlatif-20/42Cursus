@@ -6,7 +6,7 @@
 #    By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 23:00:48 by aben-nei          #+#    #+#              #
-#    Updated: 2023/01/23 10:19:59 by aben-nei         ###   ########.fr        #
+#    Updated: 2023/01/23 12:00:16 by aben-nei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC = ft_atoi.c big_sort.c ft_lstadd_back.c ft_lstadd_front.c \
 SRC_BNS = checker.c ft_atoi.c big_sort.c ft_lstadd_back.c ft_lstadd_front.c \
 		ft_lstlast.c ft_lstsize.c instriction.c instriction2.c push_swap_utils.c \
 		utils.c ft_lstnew.c ft_putstr_fd.c get_next_line.c get_next_line_utils.c \
-		utils2.c ft_split.c checker_utils.c\
+		utils2.c ft_split.c \
 
 OBJ = ${SRC:%.c=%.o}
 OBJS = ${addprefix $(OBJ_DIR),$(OBJ)}

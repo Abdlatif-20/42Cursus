@@ -6,12 +6,11 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:49 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/23 11:50:50 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/23 13:05:20 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
-#include"get_next_line.h"
 
 void	filed_arr(char **av, t_list **head_a)
 {
@@ -47,6 +46,8 @@ char	**check_string_valid(char *str)
 			{
 				if (!(tab[i][i1 + 1] >= '0' && tab[i][i1 + 1] <= '9'))
 					return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
+				if (i1 != 0)
+					return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
 			}
 			else if (!(tab[i][i1] >= '0' && tab[i][i1] <= '9'))
 					return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
@@ -57,37 +58,6 @@ char	**check_string_valid(char *str)
 	return (tab);
 }
 
-int	check_is_string_wrong(char *str)
-{
-	while (*str)
-	{
-		if (*str != ' ')
-			return (1);
-		str++;
-	}
-	return (0);
-}
-
-char **check_string(char **av)
-{
-	char *str;
-	str = NULL;
-	int	i;
-
-	i = 1;
-	while (av[i])
-	{
-		if (!check_is_string_wrong(av[i]))
-		{
-			
-			return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
-		}
-			str = ft_strjoin(str, av[i]);
-			str = ft_strjoin(str, " ");
-		i++;
-		}
-	return(check_string_valid(str));
-}
 
 void	check_doublicate(t_list *stack_a)
 {

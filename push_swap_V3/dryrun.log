@@ -1,0 +1,29 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/aben-nei/Desktop/42Cursus/push_swap_V3'
+mkdir obj/
+ 
+cc -Wall -Wextra -Werror -c ft_atoi.c -o obj/ft_atoi.o
+cc -Wall -Wextra -Werror -c big_sort.c -o obj/big_sort.o
+cc -Wall -Wextra -Werror -c ft_lstadd_back.c -o obj/ft_lstadd_back.o
+cc -Wall -Wextra -Werror -c ft_lstadd_front.c -o obj/ft_lstadd_front.o
+cc -Wall -Wextra -Werror -c ft_lstlast.c -o obj/ft_lstlast.o
+cc -Wall -Wextra -Werror -c ft_lstsize.c -o obj/ft_lstsize.o
+cc -Wall -Wextra -Werror -c instriction.c -o obj/instriction.o
+ 
+cc -Wall -Wextra -Werror -c instriction2.c -o obj/instriction2.o
+cc -Wall -Wextra -Werror -c push_swap_utils.c -o obj/push_swap_utils.o
+cc -Wall -Wextra -Werror -c utils.c -o obj/utils.o
+cc -Wall -Wextra -Werror -c ft_lstnew.c -o obj/ft_lstnew.o
+cc -Wall -Wextra -Werror -c ft_putstr_fd.c -o obj/ft_putstr_fd.o
+ 
+cc -Wall -Wextra -Werror -c ft_big_sort.c -o obj/ft_big_sort.o
+cc -Wall -Wextra -Werror -c easy_sort.c -o obj/easy_sort.o
+cc -Wall -Wextra -Werror -c push_swap.c -o obj/push_swap.o
+cc -Wall -Wextra -Werror -c ft_five_numbers.c -o obj/ft_five_numbers.o
+cc -Wall -Wextra -Werror -c utils2.c -o obj/utils2.o
+cc -Wall -Wextra -Werror -c get_next_line_utils.c -o obj/get_next_line_utils.o
+ 
+cc -Wall -Wextra -Werror -c ft_split.c -o obj/ft_split.o
+cc -Wall -Wextra -Werror obj/ft_atoi.o obj/big_sort.o obj/ft_lstadd_back.o obj/ft_lstadd_front.o obj/ft_lstlast.o obj/ft_lstsize.o obj/instriction.o obj/instriction2.o obj/push_swap_utils.o obj/utils.o obj/ft_lstnew.o obj/ft_putstr_fd.o obj/ft_big_sort.o obj/easy_sort.o obj/push_swap.o obj/ft_five_numbers.o obj/utils2.o obj/get_next_line_utils.o obj/ft_split.o -o push_swap
+make: Leaving directory `/Users/aben-nei/Desktop/42Cursus/push_swap_V3'
+ 

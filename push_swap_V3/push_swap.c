@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:26:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/23 11:51:59 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:38:07 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ void	ft_sorted(char **av)
 	if (!check_is_sorted(head_a))
 	{
 		if (size <= 3)
+		{
+			
 			ft_sort(&head_a);
+		}
 		else if(size <= 5)
 			ft_five(&head_a, &head_b);
 		else if (size > 5 && size <= 300)
@@ -46,7 +49,7 @@ int	main(int ac, char **av)
 {
 	// atexit(ff);
 	char **tab;
-	if (ac < 3)
+	if (ac == 1)
 		exit (1);
 
 	tab = check_string(av);
