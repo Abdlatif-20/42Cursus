@@ -6,77 +6,51 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:26:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/21 23:58:06 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:51:59 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	filed_arr(char **av, int ac, t_list **head_a)
+// void ff()
+// {
+// 	system("leaks push_swap");
+// }
+
+void	ft_sorted(char **av)
 {
-	t_list	*node;
-	int	i;
-	i = 1;
-	while (i < ac)
+	int size;
+	t_list *head_a;
+	t_list *head_b;
+
+	head_a = NULL;
+	head_b = NULL;
+
+	filed_arr(av, &head_a);
+	size = ft_lstsize(head_a);
+	get_index(head_a);
+	if (!check_is_sorted(head_a))
 	{
-		node = ft_lstnew(ft_atoi(av[i]));
-		ft_lstadd_back(head_a, node);
-		i++;
+		if (size <= 3)
+			ft_sort(&head_a);
+		else if(size <= 5)
+			ft_five(&head_a, &head_b);
+		else if (size > 5 && size <= 300)
+			ft_big_sort_100(&head_a, &head_b, size / 5);
+		else if (size > 300)
+			ft_big_sort_500(&head_a, &head_b, size / 9);
 	}	
-}
-void ff()
-{
-	system("leaks push_swap");
 }
 
 int	main(int ac, char **av)
 {
-	atexit(ff);
-	int	i;
-	int size;
-	int chunk;
-	t_list *head_a;
-	t_list *head_b;
-	t_list *head;
-
-	head_a = NULL;
-	head_b = NULL;
-	i = 0;
+	// atexit(ff);
+	char **tab;
 	if (ac < 3)
-		return (0);
-	if (check_string_valid(av))
-	{
-		filed_arr(av, ac, &head_a);
-		head = head_a;
-		// printf("%d", ft_lstsize(head));
-		size = ft_lstsize(head_a);
-		get_index(head_a);
-		if (!check_is_sorted(head))
-		{
-			if (size <= 3)
-				ft_sort(&head);
-			else if (size == 5)
-				ft_five(&head, &head_b);
-			else if (size <= 100)
-			{
-				chunk = ft_lstsize(head) / 5;
-				ft_big_sort_100(&head, &head_b);
-			}
-			else
-			{
-				chunk = ft_lstsize(head) / 9;
-				ft_big_sort_500(&head, &head_b, chunk);
-			}
-		}
-		// head = head_a;
-		// while (head)
-		// {
-		// 	printf("[%lld] %d\n", head->data, head->index);
-		// 	head = head->next;
-		// }
-		// head = head_a;
-		// ft_push(&head, &head_b);
-		// printf("%d\n", check_position1(head, 5));
-	}
+		exit (1);
+
+	tab = check_string(av);
+	ft_sorted(tab);
+	
 	return (0);
 }

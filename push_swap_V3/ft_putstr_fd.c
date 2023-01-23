@@ -6,16 +6,16 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 01:44:14 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/16 15:08:17 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/23 09:24:30 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-void	ft_putstr_fd(char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
 	while (*s)
-		write (1, s++, 1);
+		write (fd, s++, 1);
 }

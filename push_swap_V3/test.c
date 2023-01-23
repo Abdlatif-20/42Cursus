@@ -1,25 +1,28 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdbool.h>
+#include "push_swap.h"
 
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
+#include <stdio.h>
+void red()
+{
+    printf("\033[1;31m");
+}
+
+void yellow()
+{
+    printf("\033[1;33m");
+}
+
+void reset()
+{
+    printf("\033[0m");
+}
 
 int main()
 {
-    int A;
-    scanf("%d", &A);
-    int B;
-    scanf("%d", &B);
-    int C;
-    scanf("%d", &C);
-    int sum = A + B;
-    if (sum <= C)
-        printf("");
-    else
-        printf("%d\n", A + B + C);
-    // return 0;
+    // red();
+    ft_putstr_fd("\033[1;31mHello ");
+    // write(1, "Hello ", 6);
+    yellow();
+    printf("world\n");
+    reset();
+    return 0;
 }

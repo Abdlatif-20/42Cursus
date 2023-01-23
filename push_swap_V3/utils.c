@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:23:03 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/20 06:16:45 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/22 22:56:10 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,6 @@ int	get_index_of_max(t_list *stack)
 	}
 	return (max->index);
 }
-
-// int	get_index_of_prev_max(t_list *stack)
-// {
-// 	int max;
-// 	t_list *tmp;
-// 	max = 0;
-// 	tmp = stack;
-// 	while (tmp)
-// 	{
-// 		if (max < tmp->index && tmp->index != get_index_of_max(stack))
-// 			max = tmp->index;
-// 		tmp = tmp->next;
-// 	}
-// 	return (max);
-// }
 
 int get_index_of_prev_max(t_list *stack)
 {

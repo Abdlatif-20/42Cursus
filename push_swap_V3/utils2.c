@@ -1,38 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 22:21:37 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/22 19:29:02 by aben-nei         ###   ########.fr       */
+/*   Created: 2023/01/23 01:32:32 by aben-nei          #+#    #+#             */
+/*   Updated: 2023/01/23 01:35:57 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
-long long	ft_atoi(const char *str)
+int position(t_list *stack_b, int index)
 {
-	if (!str)
-		return (0);
-	long long		res;
-	long long		sign;
+	int pos;
 
-	res = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '-' || *str == '+')
+	pos = 0;
+	while (stack_b)
 	{
-		if (*str == '-')
-			sign = -1;
-		str++;
+		if (stack_b->index == index)
+			return (pos);
+		stack_b = stack_b->next;
+		pos++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		res = (res * 10) + (*str - '0');
-		str++;
-	}
-	return (sign * res);
+	return (pos);
 }
+
+int check_position(t_list *list, int max)
+{
+	t_list *head;
+	int pos;
+
+	pos = 0;
+	head = list;
+	while (head)
+	{
+		if (head->index < max)
+			return (pos);
+		head = head->next;
+		pos++;
+	}
+	return (pos);
+}
+

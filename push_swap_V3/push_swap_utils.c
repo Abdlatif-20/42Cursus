@@ -6,35 +6,90 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:49 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/15 01:04:23 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:50:50 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+#include"get_next_line.h"
 
-int	check_string_valid(char **av)
+void	filed_arr(char **av, t_list **head_a)
 {
-	int i;
-	int i2;
+	t_list	*node;
+	int	i;
+	i = 0;
+	while (av[i])
+	{
+		node = ft_lstnew(ft_atoi(av[i]));
+		ft_lstadd_back(head_a, node);
+		i++;
+	}
+	if (check_valid(*head_a))
+		check_doublicate(*head_a);
+}
+
+char	**check_string_valid(char *str)
+{
+	char **tab;
+	int	i;
+	int	i1;
+	int	flage;
+	
+	tab = ft_split(str, ' ');
+	i = -1;
+	while (tab[++i])
+	{
+		i1 = -1;
+		flage = 0;
+		while (tab[i][++i1])
+		{
+			if ((tab[i][i1] == '+' || tab[i][i1] == '-') && ++flage)
+			{
+				if (!(tab[i][i1 + 1] >= '0' && tab[i][i1 + 1] <= '9'))
+					return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
+			}
+			else if (!(tab[i][i1] >= '0' && tab[i][i1] <= '9'))
+					return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
+			if (flage > 1)
+				return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
+		}
+	}
+	return (tab);
+}
+
+int	check_is_string_wrong(char *str)
+{
+	while (*str)
+	{
+		if (*str != ' ')
+			return (1);
+		str++;
+	}
+	return (0);
+}
+
+char **check_string(char **av)
+{
+	char *str;
+	str = NULL;
+	int	i;
 
 	i = 1;
 	while (av[i])
 	{
-		i2 = 0;
-		while (av[i][i2])
+		if (!check_is_string_wrong(av[i]))
 		{
-			if (av[i][i2] == '-' || av[i][i2] == '+' || av[i][i2] == ' ')
-				i2++;
-			else if (!(av[i][i2] >= '0' && av[i][i2] <= '9'))
-				return (0);
-			i2++;
+			
+			return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
 		}
+			str = ft_strjoin(str, av[i]);
+			str = ft_strjoin(str, " ");
 		i++;
-	}
-	return (1);
+		}
+	return(check_string_valid(str));
 }
 
-int	check_doublicate(t_list *stack_a)
+void	check_doublicate(t_list *stack_a)
 {
 	t_list	*nodes;
 	t_list	*check;
@@ -47,12 +102,11 @@ int	check_doublicate(t_list *stack_a)
 		while (check != NULL)
 		{
 			if (nodes->data == check->data)
-				return (0);
+				return (ft_putstr_fd("Error\n", 2), exit(1));
 			check = check->next;
 		}
 		nodes = nodes->next;
 	}
-	return (1);
 }
 
 int	check_valid(t_list *stack_a)
@@ -60,7 +114,7 @@ int	check_valid(t_list *stack_a)
 	while (stack_a != NULL)
 	{
 		if (stack_a->data > 2147483647 || stack_a->data < -2147483648)
-			return (0);
+				return (ft_putstr_fd("Error\n", 2), exit(1), 0);
 		stack_a = stack_a->next;
 	}
 	return (1);
@@ -68,6 +122,8 @@ int	check_valid(t_list *stack_a)
 
 int	check_is_sorted(t_list *stack_a)
 {
+	if(!stack_a)
+		return (0);
 	while (stack_a->next != NULL)
 	{
 		if (stack_a->data > stack_a->next->data)
