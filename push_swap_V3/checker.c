@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 00:12:12 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/24 13:55:59 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 21:00:38 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	statement(t_list **stack_a, t_list **stack_b, char *str)
 	else if (!strcmp(str, "rrr\n"))
 		ft_rrr(stack_a, stack_b, "");
 	else
-		return (write (1, "Error\n", 6), exit(1));
+		return (ft_putstr_fd("Error1\n", 2), exit(1));
 }
 
 void	do_push_swap(char **av)
@@ -51,7 +51,7 @@ void	do_push_swap(char **av)
 	head_a = NULL;
 	head_b = NULL;
 	tab = check_string(av);
-	filed_arr(tab, &head_a);
+	filed_list(tab, &head_a);
 	get_index(head_a);
 	while (1)
 	{

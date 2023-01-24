@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:56 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/24 17:44:16 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 20:53:00 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int			check_position(t_list *list, int max);
 /*------------------------- Function To Sort -------------------------*/
 
 long long	ft_atoi(const char *str);
-void		filed_arr(char **av, t_list **head_a);
+void		filed_list(char **av, t_list **head_a);
 void		get_index(t_list *stack_a);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_sort(t_list **stack_a);

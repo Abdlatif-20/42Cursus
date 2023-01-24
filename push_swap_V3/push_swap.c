@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:26:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/24 17:22:19 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 20:53:24 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_sorted(char **av)
 
 	head_a = NULL;
 	head_b = NULL;
-	filed_arr(av, &head_a);
+	filed_list(av, &head_a);
 	size = ft_lstsize(head_a);
 	get_index(head_a);
 	if (!check_is_sorted(head_a))
