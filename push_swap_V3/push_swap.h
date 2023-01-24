@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:56 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/24 16:32:46 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:35:46 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void		ft_lstadd_front(t_list **lst, t_list *new);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 t_list		*ft_lstlast(t_list *lst);
 int			ft_lstsize(t_list *lst);
-void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst);
 
 /*--------------------------- Parsin -------------------------*/
