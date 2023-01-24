@@ -6,7 +6,7 @@
 /*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:49 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/24 02:58:32 by abdlatif         ###   ########.fr       */
+/*   Updated: 2023/01/24 03:12:53 by abdlatif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ char	**check_string_valid(char *str)
 			if ((tab[i][i1] == '+' || tab[i][i1] == '-') && ++flage)
 			{
 				if (!(tab[i][i1 + 1] >= '0' && tab[i][i1 + 1] <= '9') || i1 != 0)
-					return (ft_putstr_fd("Error\n", 2), exit(1), NULL);	
+					return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);	
 			}
 			else if (!(tab[i][i1] >= '0' && tab[i][i1] <= '9'))
-					return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
+					return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);
 			if (flage > 1)
-				return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
+				return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);
 		}
 	}
 	return (tab);
@@ -69,7 +69,7 @@ void	check_doublicate(t_list *stack_a)
 		while (check != NULL)
 		{
 			if (nodes->data == check->data)
-				return (free(stack_a), ft_putstr_fd("Error\n", 2), exit(1));
+				return (free(stack_a), ft_putstr_fd("\033[0;31mError\n", 2), exit(1));
 			check = check->next;
 		}
 		nodes = nodes->next;
@@ -81,7 +81,7 @@ int	check_valid(t_list *stack_a)
 	while (stack_a != NULL)
 	{
 		if (stack_a->data > 2147483647 || stack_a->data < -2147483648)
-				return (free(stack_a), ft_putstr_fd("Error\n", 2), exit(1), 0);
+				return (free(stack_a), ft_putstr_fd("\033[0;31mError\n", 2), exit(1), 0);
 		stack_a = stack_a->next;
 	}
 	return (1);
