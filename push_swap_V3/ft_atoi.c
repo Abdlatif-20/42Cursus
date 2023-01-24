@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:21:37 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/22 19:29:02 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:06:41 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 long long	ft_atoi(const char *str)
 {
-	if (!str)
-		return (0);
 	long long		res;
 	long long		sign;
 
+	if (!str)
+		return (0);
 	res = 0;
 	sign = 1;
 	while ((*str >= 9 && *str <= 13) || *str == 32)

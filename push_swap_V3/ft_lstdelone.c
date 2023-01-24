@@ -6,13 +6,13 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 00:26:04 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/21 23:55:39 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:07:08 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swaap.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst && del)
 	{

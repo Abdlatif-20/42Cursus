@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 01:32:32 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/24 03:14:03 by abdlatif         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:02:59 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include"get_next_line.h"
 
-int position(t_list *stack_b, int index)
+int	position(t_list *stack_b, int index)
 {
-	int pos;
+	int	pos;
 
 	pos = 0;
 	while (stack_b)
@@ -28,10 +28,10 @@ int position(t_list *stack_b, int index)
 	return (pos);
 }
 
-int check_position(t_list *list, int max)
+int	check_position(t_list *list, int max)
 {
-	t_list *head;
-	int pos;
+	t_list	*head;
+	int		pos;
 
 	pos = 0;
 	head = list;
@@ -47,7 +47,7 @@ int check_position(t_list *list, int max)
 
 int	check_is_string_wrong(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -59,23 +59,23 @@ int	check_is_string_wrong(char *str)
 	return (0);
 }
 
-char **check_string(char **av)
+char	**check_string(char **av)
 {
-	char *str;
-	str = NULL;
-	int	i;
+	char	*str;
+	int		i;
 
+	str = NULL;
 	i = 1;
 	while (av[i])
 	{
 		if (!check_is_string_wrong(av[i]))
-			return (free(str), ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);
+			return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);
 		else
 		{
 			str = ft_strjoin(str, av[i]);
 			str = ft_strjoin(str, " ");
 		}
 		i++;
-		}
-	return(check_string_valid(str));
+	}
+	return (check_string_valid(str));
 }

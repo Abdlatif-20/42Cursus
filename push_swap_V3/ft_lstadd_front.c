@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:00:56 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/16 03:28:47 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 14:03:16 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!new)
 		return ;
-	new->next = *lst;//seg
+	new->next = *lst;
 	*lst = new;
 }

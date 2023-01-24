@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:23:03 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/22 22:56:10 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:35:30 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	get_index_of_max(t_list *stack)
 {
-	t_list *max;
-	t_list *tmp;
+	t_list	*max;
+	t_list	*tmp;
 
 	max = stack;
 	tmp = stack;
@@ -28,10 +28,10 @@ int	get_index_of_max(t_list *stack)
 	return (max->index);
 }
 
-int get_index_of_prev_max(t_list *stack)
+int	get_index_of_prev_max(t_list *stack)
 {
-	t_list *max;
-	t_list *tmp;
+	t_list	*max;
+	t_list	*tmp;
 
 	max = stack;
 	tmp = stack;
@@ -39,16 +39,18 @@ int get_index_of_prev_max(t_list *stack)
 	{
 		if (max->index == get_index_of_max(stack))
 			max = max->next;
-		if (max->index < tmp->next->index && tmp->next->index < get_index_of_max(stack))
+		if (max->index < tmp->next->index
+			&& tmp->next->index < get_index_of_max(stack))
 			max = tmp->next;
 		tmp = tmp->next;
 	}
 	return (max->index);
 }
+
 int	num_of_instrection(int size_of_list, int pos)
 {
-	int instr;
-	
+	int	instr;
+
 	if (pos > size_of_list / 2)
 		instr = (size_of_list - pos) + 1;
 	else
@@ -59,14 +61,14 @@ int	num_of_instrection(int size_of_list, int pos)
 void	new_min(t_list **stack_a, t_list **min)
 {
 	t_list	*head_a;
-	
+
 	head_a = *stack_a;
 	while (head_a)
 	{
 		if (head_a->index == -1)
 		{
 			*min = head_a;
-			break;
+			break ;
 		}
 		head_a = head_a->next;
 	}
@@ -75,7 +77,7 @@ void	new_min(t_list **stack_a, t_list **min)
 void	get_index(t_list *stack_a)
 {
 	t_list	*min;
-	t_list *tmp;
+	t_list	*tmp;
 	int		i;
 	int		size;
 

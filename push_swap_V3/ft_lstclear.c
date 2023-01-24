@@ -6,26 +6,23 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:44:58 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/21 23:54:32 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:05:41 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst)
 {
 	t_list	*swap;
 
-	if (lst && del)
+	if (*lst && lst)
 	{
-		if (*lst)
+		while (*lst)
 		{
-			while (*lst)
-			{
-				swap = (*lst)->next;
-				ft_lstdelone(*lst, del);
-				(*lst) = swap;
-			}
+			swap = (*lst)->next;
+			free(*lst);
+			(*lst) = swap;
 		}
 	}
 }

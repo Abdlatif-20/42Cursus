@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 00:10:43 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/22 22:59:42 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 13:52:04 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,19 @@ void	back1(t_list **stack_a, t_list **stack_b)
 		ft_sa_sb(stack_a, "sa\n");
 }
 
-static void	finaly_sort_100(t_list **stack_a, t_list **stack_b)
+void	back2(t_list **stack_a, t_list **stack_b, int size)
+{
+	if (position(*stack_b, get_index_of_max(*stack_b)) >= size / 2)
+		while (position(*stack_b, get_index_of_max(*stack_b)) > 0)
+			ft_rra_rrb(stack_b, "rrb\n");
+	else
+		while (position(*stack_b, get_index_of_max(*stack_b)) > 0)
+			ft_ra_rb(stack_b, "rb\n");
+	if (!position(*stack_b, get_index_of_max(*stack_b)))
+		ft_pa_pb(stack_b, stack_a, "pa\n");
+}
+
+static void	finaly_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	instr1;
 	int	instr2;
@@ -56,24 +68,29 @@ static void	finaly_sort_100(t_list **stack_a, t_list **stack_b)
 		if (instr1 > instr2)
 			back1(stack_a, stack_b);
 		else
-		{
-			if (position(*stack_b, get_index_of_max(*stack_b)) >= size / 2)
-				while (position(*stack_b, get_index_of_max(*stack_b)) > 0)
-					ft_rra_rrb(stack_b, "rrb\n");
-			else
-				while (position(*stack_b, get_index_of_max(*stack_b)) > 0)
-					ft_ra_rb(stack_b, "rb\n");
-			if (!position(*stack_b, get_index_of_max(*stack_b)))
-				ft_pa_pb(stack_b, stack_a, "pa\n");
-		}
+			back2(stack_a, stack_b, size);
 	}
 }
 
-void	ft_big_sort_100(t_list **stack_a, t_list **stack_b, int chunk)
+static void	pushs(t_list **stack_a, t_list **stack_b, int chunk)
+{
+	ft_pa_pb(stack_a, stack_b, "pb\n");
+	if ((*stack_a)->index < ft_lstsize(*stack_a) / 2
+		&& (*stack_a)->index > chunk)
+		ft_rr(stack_a, stack_b, "rr\n");
+	else
+		ft_ra_rb(stack_b, "rb\n");
+}
+
+void	big_sort(t_list **stack_a, t_list **stack_b, int chunk)
 {
 	int	i;
+	int	index;
+	int	moy;
 
 	i = -1;
+	index = chunk;
+	moy = index / 2;
 	while (*stack_a)
 	{
 		while (++i < chunk && *stack_a)
@@ -84,19 +101,12 @@ void	ft_big_sort_100(t_list **stack_a, t_list **stack_b, int chunk)
 			while (check_position((*stack_a), chunk) >= ft_lstsize(*stack_a) / 2
 				&& (*stack_a)->index > chunk)
 				ft_rra_rrb(stack_a, "rra\n");
-			if ((*stack_a)->index > chunk - 10)
-			{
-				ft_pa_pb(stack_a, stack_b, "pb\n");
-				if ((*stack_a)->index < ft_lstsize(*stack_a) / 2
-					&& (*stack_a)->index > chunk)
-					ft_rr(stack_a, stack_b, "rr\n");
-				else
-					ft_ra_rb(stack_b, "rb\n");
-			}
+			if ((*stack_a)->index > chunk - moy)
+				pushs(stack_a, stack_b, chunk);
 			else
 				ft_pa_pb(stack_a, stack_b, "pb\n");
 		}
-			chunk += 20;
+			chunk += index;
 	}
-	finaly_sort_100(stack_a, stack_b);
+	finaly_sort(stack_a, stack_b);
 }

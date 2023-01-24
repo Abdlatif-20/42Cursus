@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 21:39:15 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/23 01:06:53 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:48:52 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,32 @@
 
 void	push(t_list **stack_a, t_list **stack_b, int index)
 {
-		while (position(*stack_a, index) > 0 && position(*stack_a, index) >= ft_lstsize(*stack_a) / 2)
-			ft_rra_rrb(stack_a, "rra\n");
-		while (position(*stack_a, index) > 0 && position(*stack_a, index) < ft_lstsize(*stack_a) / 2)
-			ft_ra_rb(stack_a, "ra\n");
-		if (!position(*stack_a, index))
-			ft_pa_pb(stack_a, stack_b, "pb\n");
-	
+	while (position(*stack_a, index) > 0
+		&& position(*stack_a, index) >= ft_lstsize(*stack_a) / 2)
+		ft_rra_rrb(stack_a, "rra\n");
+	while (position(*stack_a, index) > 0
+		&& position(*stack_a, index) < ft_lstsize(*stack_a) / 2)
+		ft_ra_rb(stack_a, "ra\n");
+	if (!position(*stack_a, index))
+		ft_pa_pb(stack_a, stack_b, "pb\n");
 }
 
 void	ft_five(t_list **stack_a, t_list **stack_b)
 {
-		if (position(*stack_a, 0) >= 0 && *stack_a)
-			push(stack_a, stack_b, 0 && *stack_a);
-		if (position(*stack_a, 1) >= 0 && *stack_a)
-			push(stack_a, stack_b, 1 && *stack_a);
-		if (ft_lstsize(*stack_a) <= 3 && !check_is_sorted(*stack_a) && *stack_a)
-			ft_sort(stack_a);
-		if ((*stack_b)->index > (*stack_b)->next->index)
-			ft_pa_pb(stack_a, stack_b, "pa\n");
-		else
-		{
-			ft_sa_sb(stack_b, "sb\n");
-			ft_pa_pb(stack_a, stack_b, "pa\n");
-		}
+	if (position(*stack_a, 0) >= 0 && *stack_a)
+		push(stack_a, stack_b, 0 && *stack_a);
+	if (position(*stack_a, 1) >= 0 && *stack_a)
+		push(stack_a, stack_b, 1 && *stack_a);
+	if (ft_lstsize(*stack_a) <= 3 && !check_is_sorted(*stack_a) && *stack_a)
+		ft_sort(stack_a);
+	if ((*stack_b)->index > (*stack_b)->next->index)
 		ft_pa_pb(stack_a, stack_b, "pa\n");
+	else
+	{
+		ft_sa_sb(stack_b, "sb\n");
+		ft_pa_pb(stack_a, stack_b, "pa\n");
+	}
+	ft_pa_pb(stack_a, stack_b, "pa\n");
 }
 
 // int main(int ac, char **av)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:49 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/24 03:12:53 by abdlatif         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:18:03 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,28 @@
 void	filed_arr(char **av, t_list **head_a)
 {
 	t_list	*node;
-	int	i;
+	int		i;
+
 	i = 0;
 	while (av[i])
 	{
 		node = ft_lstnew(ft_atoi(av[i]));
+		free(av[i]);
 		ft_lstadd_back(head_a, node);
 		i++;
 	}
 	if (check_valid(*head_a))
 		check_doublicate(*head_a);
+	free(av);
 }
 
 char	**check_string_valid(char *str)
 {
-	char **tab;
-	int	i;
-	int	i1;
-	int	flage;
-	
+	char	**tab;
+	int		i;
+	int		i1;
+	int		flage;
+
 	tab = ft_split(str, ' ');
 	i = -1;
 	while (tab[++i])
@@ -45,10 +48,10 @@ char	**check_string_valid(char *str)
 			if ((tab[i][i1] == '+' || tab[i][i1] == '-') && ++flage)
 			{
 				if (!(tab[i][i1 + 1] >= '0' && tab[i][i1 + 1] <= '9') || i1 != 0)
-					return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);	
+					return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);
 			}
 			else if (!(tab[i][i1] >= '0' && tab[i][i1] <= '9'))
-					return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);
+				return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);
 			if (flage > 1)
 				return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);
 		}
@@ -69,7 +72,7 @@ void	check_doublicate(t_list *stack_a)
 		while (check != NULL)
 		{
 			if (nodes->data == check->data)
-				return (free(stack_a), ft_putstr_fd("\033[0;31mError\n", 2), exit(1));
+				return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1));
 			check = check->next;
 		}
 		nodes = nodes->next;
@@ -81,7 +84,7 @@ int	check_valid(t_list *stack_a)
 	while (stack_a != NULL)
 	{
 		if (stack_a->data > 2147483647 || stack_a->data < -2147483648)
-				return (free(stack_a), ft_putstr_fd("\033[0;31mError\n", 2), exit(1), 0);
+			return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), 0);
 		stack_a = stack_a->next;
 	}
 	return (1);
@@ -89,7 +92,7 @@ int	check_valid(t_list *stack_a)
 
 int	check_is_sorted(t_list *stack_a)
 {
-	if(!stack_a)
+	if (!stack_a)
 		return (0);
 	while (stack_a->next != NULL)
 	{

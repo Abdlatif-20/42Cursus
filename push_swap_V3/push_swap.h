@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:56 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/23 09:22:12 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:32:46 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void		ft_lstadd_back(t_list **lst, t_list *new);
 t_list		*ft_lstlast(t_list *lst);
 int			ft_lstsize(t_list *lst);
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
-void		ft_lstclear(t_list **lst, void (*del)(void *));
+void		ft_lstclear(t_list **lst);
 
 /*--------------------------- Parsin -------------------------*/
 
 char		**check_string_valid(char *str);
-void			check_doublicate(t_list *stack_a);
+void		check_doublicate(t_list *stack_a);
 char		**check_string(char **av);
 int			check_valid(t_list *stack_a);
 int			check_is_sorted(t_list *stack_a);
@@ -63,11 +63,12 @@ void		get_index(t_list *stack_a);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_sort(t_list **stack_a);
 void		ft_five(t_list **stack_a, t_list **stack_b);
+void		ft_sort_ten(t_list **stack_a, t_list **stack_b);
 int			num_of_instrection(int size_of_list, int pos);
 int			get_index_of_max(t_list *stack);
 int			get_index_of_prev_max(t_list *stack);
 int			position(t_list *stack_b, int index);
-void		ft_big_sort_100(t_list **stack_a, t_list **stack_b, int chunk);
+void		big_sort(t_list **stack_a, t_list **stack_b, int chunk);
 void		ft_big_sort_500(t_list **stack_a, t_list **stack_b, int chunk);
 char		**ft_split(char *s, char c);
 char		*ft_substr(char *s, unsigned int start, size_t len);
