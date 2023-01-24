@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 01:32:32 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/23 12:05:25 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 02:30:13 by abdlatif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,12 @@ char **check_string(char **av)
 	while (av[i])
 	{
 		if (!check_is_string_wrong(av[i]))
-			return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
+			return (free(str), ft_putstr_fd("Error\n", 2), exit(1), NULL);
+		else
+		{
 			str = ft_strjoin(str, av[i]);
 			str = ft_strjoin(str, " ");
+		}
 		i++;
 		}
 	return(check_string_valid(str));

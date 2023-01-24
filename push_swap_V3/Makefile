@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+         #
+#    By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 23:00:48 by aben-nei          #+#    #+#              #
-#    Updated: 2023/01/23 12:00:16 by aben-nei         ###   ########.fr        #
+#    Updated: 2023/01/24 02:02:15 by abdlatif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,14 +52,14 @@ ${OBJ_DIR}%.o : %.c ${HDR}
 fclean : clean
 	${RM} ${NAME} ${NAME_BNS}
 
-fclean_BNS : clean_BNS
+fclean_bns : clean_bns
 	${RM} ${NAME_BNS}
 
 clean :
 	${RM} ${OBJ_DIR}
-clean_BNS :
+clean_bns :
 	${RM} ${OBJ_BNS}
 
-re : fclean fclean_BNS all bonus
+re : fclean fclean_bns all bonus
 
 .PHONY : fclean clean

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdlatif <abdlatif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:49 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/23 13:05:20 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 02:58:32 by abdlatif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,8 @@ char	**check_string_valid(char *str)
 		{
 			if ((tab[i][i1] == '+' || tab[i][i1] == '-') && ++flage)
 			{
-				if (!(tab[i][i1 + 1] >= '0' && tab[i][i1 + 1] <= '9'))
-					return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
-				if (i1 != 0)
-					return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
+				if (!(tab[i][i1 + 1] >= '0' && tab[i][i1 + 1] <= '9') || i1 != 0)
+					return (ft_putstr_fd("Error\n", 2), exit(1), NULL);	
 			}
 			else if (!(tab[i][i1] >= '0' && tab[i][i1] <= '9'))
 					return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
@@ -57,7 +55,6 @@ char	**check_string_valid(char *str)
 	}
 	return (tab);
 }
-
 
 void	check_doublicate(t_list *stack_a)
 {
@@ -72,7 +69,7 @@ void	check_doublicate(t_list *stack_a)
 		while (check != NULL)
 		{
 			if (nodes->data == check->data)
-				return (ft_putstr_fd("Error\n", 2), exit(1));
+				return (free(stack_a), ft_putstr_fd("Error\n", 2), exit(1));
 			check = check->next;
 		}
 		nodes = nodes->next;
@@ -84,7 +81,7 @@ int	check_valid(t_list *stack_a)
 	while (stack_a != NULL)
 	{
 		if (stack_a->data > 2147483647 || stack_a->data < -2147483648)
-				return (ft_putstr_fd("Error\n", 2), exit(1), 0);
+				return (free(stack_a), ft_putstr_fd("Error\n", 2), exit(1), 0);
 		stack_a = stack_a->next;
 	}
 	return (1);
@@ -102,28 +99,3 @@ int	check_is_sorted(t_list *stack_a)
 	}
 	return (1);
 }
-
-// int main(int ac, char **av)
-// {
-// 	t_list *head_a;
-// 	t_list *head_b;
-// 	head_a = NULL;
-// 	head_b = NULL;
-// 	// if (ac == 1 && !check_string_valid(av))
-// 	// 	return (0);
-// 	filed_arr(av, ac, &head_a);
-// 	// if (check_doublicate(head_a) == 0)
-// 	// 	return (0);
-// 	// check_place_of_node(&head_a);
-// 	ft_push_chunks(&head_a, &head_b, 5, ac - 1);
-// 	// while (head_a)
-// 	// {
-// 	// 	printf("-->[%lld] = %d\n", head_a->data, head_a->place);
-// 	// 	head_a = head_a->next;
-// 	// }
-	// while (head_b)
-	// {
-	// 	printf("-->[%lld] = %d\n", head_b->data, head_b->place);
-	// 	head_b = head_b->next;
-	// }
-// }
