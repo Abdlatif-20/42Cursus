@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:49 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/24 17:18:03 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:44:35 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	**check_string_valid(char *str)
 		{
 			if ((tab[i][i1] == '+' || tab[i][i1] == '-') && ++flage)
 			{
-				if (!(tab[i][i1 + 1] >= '0' && tab[i][i1 + 1] <= '9') || i1 != 0)
+				if (!(tab[i][i1 + 1] >= '0' && tab[i][i1 + 1] <= '9') || i1 ER)
 					return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);
 			}
 			else if (!(tab[i][i1] >= '0' && tab[i][i1] <= '9'))
