@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 01:32:32 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/24 21:01:39 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:32:45 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	check_position(t_list *list, int max)
 	return (pos);
 }
 
-int	check_is_string_wrong(char *str)
+int	check_is_string_empty(char *str)
 {
 	int	i;
 
@@ -68,7 +68,7 @@ char	**check_string(char **av)
 	i = 1;
 	while (av[i])
 	{
-		if (!check_is_string_wrong(av[i]))
+		if (!check_is_string_empty(av[i]))
 			return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);
 		else
 		{

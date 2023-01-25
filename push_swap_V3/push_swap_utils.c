@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:49 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/24 21:16:51 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:12:16 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,22 @@ char	**check_string_valid(char *str)
 {
 	char	**tab;
 	int		i;
-	int		i1;
-	int		flage;
+	int		j;
 
 	tab = ft_split(str, ' ');
 	i = -1;
 	while (tab[++i])
 	{
-		i1 = -1;
-		flage = 0;
-		while (tab[i][++i1])
+		j = -1;
+		while (tab[i][++j])
 		{
-			if ((tab[i][i1] == '+' || tab[i][i1] == '-') && ++flage)
+			if ((tab[i][j] == '+' || tab[i][j] == '-'))
 			{
-				if (!(tab[i][i1 + 1] >= '0' && tab[i][i1 + 1] <= '9') || i1 ER)
+				if (!(tab[i][j + 1] >= '0' && tab[i][j + 1] <= '9') || j != 0)
 					return (ft_putstr_fd("\033[0;33mError\n", 2), exit(1), NULL);
 			}
-			else if (!(tab[i][i1] >= '0' && tab[i][i1] <= '9'))
-				return (ft_putstr_fd("\033[0;31mError\n", 2), exit(1), NULL);
-			if (flage > 1)
-				return (ft_putstr_fd("\033[0;33mError\n", 2), exit(1), NULL);
+			else if (!(tab[i][j] >= '0' && tab[i][j] <= '9'))
+				return (ft_putstr_fd("Error\n", 2), exit(1), NULL);
 		}
 	}
 	return (tab);
