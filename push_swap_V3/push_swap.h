@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:56 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/25 13:11:38 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/26 00:34:34 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,5 @@ void		big_sort(t_list **stack_a, t_list **stack_b, int chunk);
 void		ft_big_sort_500(t_list **stack_a, t_list **stack_b, int chunk);
 char		**ft_split(char *s, char c);
 char		*ft_substr(char *s, unsigned int start, size_t len);
+int			ft_strncmp(const char *str1, const char *str2, size_t n);
 #endif
