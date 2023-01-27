@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 00:12:12 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/26 01:04:21 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/27 02:14:42 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	statement(t_list **stack_a, t_list **stack_b, char *str)
 	else if (!ft_strncmp(str, "rrr\n", 3))
 		ft_rrr(stack_a, stack_b, "");
 	else
-		return (ft_putstr_fd("Error1\n", 2), exit(1));
+		return (ft_putstr_fd("Error\n", 2), exit(1));
 }
 
 void	do_push_swap(char **av)
