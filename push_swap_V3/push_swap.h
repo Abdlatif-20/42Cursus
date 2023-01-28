@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:22:56 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/26 00:34:34 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/01/27 08:00:35 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define PUSH_SWAP_H
 
 # include<unistd.h>
-# include<stdio.h>
-# include<string.h>
 # include<stdlib.h>
 
 typedef struct node
