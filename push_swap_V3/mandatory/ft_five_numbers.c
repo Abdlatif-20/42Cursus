@@ -27,48 +27,17 @@ void	push(t_list **stack_a, t_list **stack_b, int index)
 void	ft_five(t_list **stack_a, t_list **stack_b)
 {
 	if (position(*stack_a, 0) >= 0 && *stack_a)
-		push(stack_a, stack_b, 0 && *stack_a);
+		push(stack_a, stack_b, 0);
 	if (position(*stack_a, 1) >= 0 && *stack_a)
-		push(stack_a, stack_b, 1 && *stack_a);
+		push(stack_a, stack_b, 1);
 	if (ft_lstsize(*stack_a) <= 3 && !check_is_sorted(*stack_a) && *stack_a)
 		ft_sort(stack_a);
 	if ((*stack_b)->index > (*stack_b)->next->index)
-		ft_pa_pb(stack_a, stack_b, "pa\n");
+		ft_pa_pb(stack_b, stack_a, "pa\n");
 	else
 	{
 		ft_sa_sb(stack_b, "sb\n");
-		ft_pa_pb(stack_a, stack_b, "pa\n");
+		ft_pa_pb(stack_b, stack_a, "pa\n");
 	}
-	ft_pa_pb(stack_a, stack_b, "pa\n");
+	ft_pa_pb(stack_b, stack_a, "pa\n");
 }
-
-// int main(int ac, char **av)
-// {
-// 	int	i;
-// 	t_list *head_a;
-// 	t_list *head_b;
-// 	t_list *head;
-// 	t_list *head_b1;
-
-// 	head_a = NULL;
-// 	head_b = NULL;
-// 	i = 0;
-// 	if (ac == 1)
-// 		return (0);
-// 	else if (check_string_valid(av))
-// 		filed_arr(av, ac, &head_a);
-// 	head = head_a;
-// 	head_b1 = head_b;
-// 	get_index(head);
-// 	ft_five(&head, &head_b1);
-// 	// if(check_is_sorted(head))
-// 	// 	printf("ok\n");
-// 	// while (head_a)
-// 	// {
-// 	// 	printf("[%lld]\n", head_a->data);
-// 	// 	head_a = head_a->next;
-// 	// }
-// 	// head = head_a;
-// 	// printf("--->%d", check_position(head, max));
-// 	return (0);
-// }
