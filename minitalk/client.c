@@ -6,48 +6,45 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 03:11:34 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/31 05:49:20 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/01 22:24:00 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-// void	convert_to_binary(char c)
-// {
-// 	int		j;
-
-// 	j = 0;
-// 	while (j <= 7)
-// 	{
-// 		if ((c & (1 << j)) == 0)
-// 			printf("0");
-// 		else
-// 			printf("1");
-// 		j++;
-// 	}
-// }
-void	convert_to_binary(char c)
+//convert_to_binary function uing bitwise operators
+void	convert_to_binary(char c, pid_t pid)
 {
-	int		j;
-	int		i;
-	char tab[9];
+	int	i;
 
-	j = 0;
-	i = 0;
-	while (j <= 8 && i < 8)
+	i = 7;
+	while (i >= 0)
 	{
-		if ((c & (1 << j)) == 0)
-			tab[i] = '0';
+		if ((c >> i) & 1)
+			kill(pid, SIGUSR1);
 		else
-			tab[i] = '1';
-		j++;
-		i++;
+			kill(pid, SIGUSR2);
+		usleep(700);
+		i--;
 	}
-	tab[i] = '\0';
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	char	str[6] = "hello";
-	convert_to_binary(str[0]);
+	pid_t	pid;
+	int		i;
+
+	if (ac != 3)
+		write(1, "Error: wrong number of arguments", 32);
+	else
+	{
+		i = 0;
+		pid = ft_atoi(av[1]);
+		while (av[2][i])
+		{
+			convert_to_binary(av[2][i], pid);
+			i++;
+		}
+		convert_to_binary('\0', pid);
+	}
 }
