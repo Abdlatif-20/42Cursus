@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   minitalk_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 04:51:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/03 00:26:45 by aben-nei         ###   ########.fr       */
+/*   Created: 2023/02/03 00:30:56 by aben-nei          #+#    #+#             */
+/*   Updated: 2023/02/03 00:31:11 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#ifndef MINITALK_BONUS_H
+# define MINITALK_BONUS_H
 
 # include<unistd.h>
 # include<stdio.h>
