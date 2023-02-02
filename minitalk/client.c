@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 03:11:34 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/01 22:24:00 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/02 22:22:53 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int ac, char **av)
 	int		i;
 
 	if (ac != 3)
-		write(1, "Error: wrong number of arguments", 32);
+		ft_putstr_fd("Error: wrong number of arguments", 1);
 	else
 	{
 		i = 0;
@@ -47,4 +47,5 @@ int	main(int ac, char **av)
 		}
 		convert_to_binary('\0', pid);
 	}
+	return (0);
 }

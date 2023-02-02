@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 21:43:06 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/02 01:11:51 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/02 21:36:16 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,17 @@ char	convert_to_char(char *str)
 //handler function to handle signals from client
 void	handler(int sig, siginfo_t *info, void *cont)
 {
-	(void)cont;
 	static char	str[9];
-	static int	i;
-	int			crent;
 	static int	get_pid;
+	static int	i;
+	int			new;
 
-	crent = info->si_pid;
-	if (crent != get_pid)
+	(void)cont;
+	new = info->si_pid;
+	if (new != get_pid)
 	{
-		get_pid = crent;
+		get_pid = new;
+		ft_bzero(str, 9);
 		i = 0;
 	}
 	if (sig == SIGUSR1)

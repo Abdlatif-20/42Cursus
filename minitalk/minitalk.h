@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 04:51:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/02 01:12:27 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:31:38 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,6 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	handler(int sig, siginfo_t *info, void *cont);
+void	*ft_memset(void *str, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
 #endif
