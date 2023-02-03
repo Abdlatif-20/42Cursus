@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 00:28:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/03 00:28:35 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/03 23:52:48 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ void	convert_to_binary(char c, pid_t pid)
 	}
 }
 
+//function to signal from the client to the server that the message is complete
+void	message_sent(void)
+{
+	ft_putstr_fd("\033[33mMessage sent\n\033[0m", 1);
+}
+
 int	main(int ac, char **av)
 {
 	pid_t	pid;
@@ -46,6 +52,7 @@ int	main(int ac, char **av)
 			i++;
 		}
 		convert_to_binary('\0', pid);
+		message_sent();
 	}
 	return (0);
 }

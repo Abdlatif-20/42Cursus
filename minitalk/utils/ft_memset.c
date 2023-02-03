@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/09 16:56:08 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/02 19:30:32 by aben-nei         ###   ########.fr       */
+/*   Created: 2022/10/09 15:18:35 by aben-nei          #+#    #+#             */
+/*   Updated: 2023/02/03 16:03:06 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "../minitalk.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memset(void *str, int c, size_t n)
 {
-	ft_memset(s, '\0', n);
+	unsigned char	*src;
+	size_t			i;
+
+	src = (unsigned char *)str;
+	i = 0;
+	while (i < n)
+		src[i++] = (unsigned char)c;
+	return (src);
 }

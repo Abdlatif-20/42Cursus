@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 00:28:46 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/03 00:28:48 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/03 23:48:36 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,35 @@ char	convert_to_char(char *str)
 	}
 	return (res);
 }
+
+//function to hold all the bits of the unicode character and print it when it's complete
+// void	check_unicode(char c)
+// {
+// 	static char	str[5];
+// 	static int	i;
+// 	str[i] = c;
+// 	i++;
+// 	if (i == 4)
+// 	{
+// 		str[i] = '\0';
+// 		ft_putstr_fd(str, 1);
+// 		i = 0;
+// 	}
+// }
+
+// function to signle from the server to the client that the message is complete
+// void	send_complete(pid_t pid)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (i < 8)
+// 	{
+// 		kill(pid, SIGUSR2);
+// 		usleep(700);
+// 		i++;
+// 	}
+// }
 
 //handler function to handle signals from client
 void	handler(int sig, siginfo_t *info, void *cont)
@@ -53,9 +82,11 @@ void	handler(int sig, siginfo_t *info, void *cont)
 	if (i == 8)
 	{
 		str[i] = '\0';
-		ft_putchar_fd(convert_to_char(str), 1);
 		i = 0;
+		ft_putchar_fd(convert_to_char(str), 1);
 	}
+	// if (convert_to_char(str) == '\0')
+	// 	send_complete(get_pid);
 }
 
 int	main(void)

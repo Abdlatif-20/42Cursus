@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 01:43:12 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/31 21:54:53 by aben-nei         ###   ########.fr       */
+/*   Created: 2022/10/18 01:44:14 by aben-nei          #+#    #+#             */
+/*   Updated: 2023/02/03 16:03:21 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"minitalk.h"
+#include"../minitalk.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	write (fd, &c, 1);
+	if (!s)
+		return ;
+	while (*s)
+		write (fd, s++, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 03:11:34 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/02 22:22:53 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/03 19:56:28 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int ac, char **av)
 	int		i;
 
 	if (ac != 3)
-		ft_putstr_fd("Error: wrong number of arguments", 1);
+		ft_putstr_fd("Error: wrong number of arguments !!\n", 1);
 	else
 	{
 		i = 0;

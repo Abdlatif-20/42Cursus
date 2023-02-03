@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 01:44:14 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/01/31 21:54:59 by aben-nei         ###   ########.fr       */
+/*   Created: 2022/10/09 16:56:08 by aben-nei          #+#    #+#             */
+/*   Updated: 2023/02/03 16:03:03 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"minitalk.h"
+#include "../minitalk.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_bzero(void *s, size_t n)
 {
-	if (!s)
-		return ;
-	while (*s)
-		write (fd, s++, 1);
+	ft_memset(s, '\0', n);
 }
