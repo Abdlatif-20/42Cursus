@@ -6,7 +6,7 @@
 #    By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 01:01:16 by aben-nei          #+#    #+#              #
-#    Updated: 2023/02/03 20:09:20 by aben-nei         ###   ########.fr        #
+#    Updated: 2023/02/05 01:32:57 by aben-nei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,12 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 HEADER = minitalk.h
+HEADER_BNS = minitalk_bonus.h
 SRCS = utils/ft_atoi.c client.c server.c utils/ft_putnbr_fd.c utils/ft_putchar_fd.c \
 		utils/ft_putchar_fd.c utils/ft_putnbr_fd.c utils/ft_putstr_fd.c utils/ft_bzero.c utils/ft_memset.c
 B_SRC = utils/ft_atoi.c client_bonus.c server_bonus.c utils/ft_putnbr_fd.c utils/ft_putchar_fd.c \
-		utils/ft_putchar_fd.c utils/ft_putnbr_fd.c utils/ft_putstr_fd.c utils/ft_bzero.c utils/ft_memset.c
+		utils/ft_putchar_fd.c utils/ft_putnbr_fd.c utils/ft_putstr_fd.c utils/ft_bzero.c \
+		utils/ft_memset.c utils/ft_strncmp.c
 OBJ = $(SRCS:%.c=%.o)
 B_OBJ = $(B_SRC:%.c=%.o)
 
@@ -27,110 +29,70 @@ all: banner $(NAME) client server
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
-	@for i in {1..40}; do \
-	printf "\033[42m \033[0m" $$i; \
-	sleep 0.03; \
+	@echo ""
+	@for i in {1..50}; do \
+	printf "\033[1;36m|\033[0m" $$i; \
+	sleep 0.05; \
 	done
-	@echo "\n"
-	@echo "\033[0;32m#############################################################\033[0m"
-	@echo "\033[0;32m#                                                           #\033[0m"
-	@echo "\033[0;32m#         The Compilation Mandatory is Finished             #\033[0m"
-	@echo "\033[0;32m#                                                           #\033[0m"
-	@echo "\033[0;32m#############################################################\033[0m"
-	@echo "\n"
+	@echo ""
+	@echo "Compilation of \033[33mMandatory\033[0m: [\033[0;32mOK\033[0m]"
 
 %.o: %.c $(HEADER)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: banner_bonus $(NAME_BONUS) client_bonus server_bonus
 
 $(NAME_BONUS): $(B_OBJ)
 	@ar rc $(NAME_BONUS) $(B_OBJ)
-	@for i in {1..40}; do \
-	printf "\033[42m \033[0m" $$i; \
-	sleep 0.03; \
+	@for i in {1..50}; do \
+	printf "\033[1;36m|\033[0m" $$i; \
+	sleep 0.05; \
 	done
 	@echo "\n"
-	@echo "\033[0;32m#############################################################\033[0m"
-	@echo "\033[0;32m#                                                           #\033[0m"
-	@echo "\033[0;32m#         The Compilation Bonus is Finished                 #\033[0m"
-	@echo "\033[0;32m#                                                           #\033[0m"
-	@echo "\033[0;32m#############################################################\033[0m"
-	@echo "\n"
+	@echo "Compilation of \033[33mBonus\033[0m: [\033[0;32mOK\033[0m]"
 
 client: client.c
 	@$(CC) $(CFLAGS) $< $(NAME) -o $@
-	@for i in {1..40}; do \
-	printf "\033[42m \033[0m" $$i; \
-	sleep 0.03; \
-	done
-	@echo "\n"
-	@echo "\033[0;32m<<creation a client is done !!>>\033[0m"
-	@echo "\n"
+	@echo "Compilation of \033[33mclient\033[0m: [\033[0;32mOK\033[0m]"
 
 server: server.c
 	@$(CC) $(CFLAGS) $< $(NAME) -o $@
-	@for i in {1..40}; do \
-	printf "\033[42m \033[0m" $$i; \
-	sleep 0.03; \
-	done
-	@echo "\n"
-	@echo "\033[0;32m<<creation a server is done !!>>\033[0m"
-	@echo "\n"
+	@echo "Compilation of \033[33mserver\033[0m: [\033[0;32mOK\033[0m]"
 
 client_bonus: client_bonus.c
 	@$(CC) $(CFLAGS) $< $(NAME_BONUS) -o $@
-	@for i in {1..40}; do \
-	printf "\033[42m \033[0m" $$i; \
-	sleep 0.03; \
-	done
-	@echo "\n"
-	@echo "\033[0;32m<<creation a client_bonus is done !!>>\033[0m"
-	@echo "\n"
+	@echo "Compilation of \033[33mclient_bonus\033[0m: [\033[0;32mOK\033[0m]"
 
 server_bonus: server_bonus.c
 	@$(CC) $(CFLAGS) $< $(NAME_BONUS) -o $@
-	@for i in {1..40}; do \
-	printf "\033[42m \033[0m" $$i; \
-	sleep 0.03; \
-	done
-	@echo "\n"
-	@echo "\033[0;32m<<creation a server_bonus is done !!>>\033[0m"
-	@echo "\n"
+	@echo "Compilation of \033[33mserver_bonus\033[0m: [\033[0;32mOK\033[0m]"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "\033[0;31m#############################################################\033[0m"
-	@echo "\033[0;31m#                                                           #\033[0m"
-	@echo "\033[0;31m#     Remove The Object file And Server / Client            #\033[0m"
-	@echo "\033[0;31m#                                                           #\033[0m"
-	@echo "\033[0;31m#############################################################\033[0m"
-
+	@echo""
+	@echo "\033[33mclient\033[0m: client deleted [\033[0;32mdone\033[0m]"
+	@echo "\033[33mserver\033[0m: server deleted [\033[0;32mdone\033[0m]"
 clean:
 	@$(RM) $(OBJ) client server
 	@echo ""
 	@for i in {1..40}; do \
-	printf "\033[41m \033[0m" $$i; \
-	sleep 0.01; \
+	printf "\033[1;31m|\033[0m" $$i; \
+	sleep 0.05; \
 	done
-	@echo "\n"
 
 fclean_bns: clean_bns
 	@$(RM) $(NAME_BONUS)
-	@echo "\033[0;31m#############################################################\033[0m"
-	@echo "\033[0;31m#                                                           #\033[0m"
-	@echo "\033[0;31m# Remove The Object file And server_bonus / client_bonus    #\033[0m"
-	@echo "\033[0;31m#                                                           #\033[0m"
-	@echo "\033[0;31m#############################################################\033[0m"
+	@echo""
+	@echo "\033[33mclient_bonus\033[0m: client_bonus deleted [\033[0;32mdone\033[0m]"
+	@echo "\033[33mserver_bonus\033[0m: server_bonus deleted [\033[0;32mdone\033[0m]"
 
 clean_bns:
 	@$(RM) $(B_OBJ) client_bonus server_bonus
 	@echo ""
 	@for i in {1..40}; do \
-	printf "\033[41m \033[0m" $$i; \
-	sleep 0.01; \
+	printf "\033[1;31m|\033[0m" $$i; \
+	sleep 0.05; \
 	done
-	@echo "\n"
 
 re: fclean all bonus
 

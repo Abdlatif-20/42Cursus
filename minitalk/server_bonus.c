@@ -6,11 +6,11 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 00:28:46 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/03 23:48:36 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/05 01:45:00 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 //convert binary to char function using bitwise operators
 char	convert_to_char(char *str)
@@ -29,48 +29,17 @@ char	convert_to_char(char *str)
 	return (res);
 }
 
-//function to hold all the bits of the unicode character and print it when it's complete
-// void	check_unicode(char c)
-// {
-// 	static char	str[5];
-// 	static int	i;
-// 	str[i] = c;
-// 	i++;
-// 	if (i == 4)
-// 	{
-// 		str[i] = '\0';
-// 		ft_putstr_fd(str, 1);
-// 		i = 0;
-// 	}
-// }
-
-// function to signle from the server to the client that the message is complete
-// void	send_complete(pid_t pid)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < 8)
-// 	{
-// 		kill(pid, SIGUSR2);
-// 		usleep(700);
-// 		i++;
-// 	}
-// }
-
 //handler function to handle signals from client
 void	handler(int sig, siginfo_t *info, void *cont)
 {
 	static char	str[9];
 	static int	get_pid;
 	static int	i;
-	int			new;
 
 	(void)cont;
-	new = info->si_pid;
-	if (new != get_pid)
+	if (info->si_pid != get_pid)
 	{
-		get_pid = new;
+		get_pid = info->si_pid;
 		ft_bzero(str, 9);
 		i = 0;
 	}
@@ -83,10 +52,10 @@ void	handler(int sig, siginfo_t *info, void *cont)
 	{
 		str[i] = '\0';
 		i = 0;
+		if (ft_strncmp(str, "00000000", 8) == 0)
+			kill(get_pid, SIGUSR2);
 		ft_putchar_fd(convert_to_char(str), 1);
 	}
-	// if (convert_to_char(str) == '\0')
-	// 	send_complete(get_pid);
 }
 
 int	main(void)

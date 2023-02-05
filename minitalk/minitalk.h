@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 04:51:52 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/03 00:26:45 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/05 00:49:30 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define MINITALK_H
 
 # include<unistd.h>
-# include<stdio.h>
-# include<stdlib.h>
+// # include<stdio.h>
+// # include<stdlib.h>
 # include<signal.h>
-# include<string.h>
+// # include<string.h>
 
 typedef struct sigaction	t_sigaction;
 

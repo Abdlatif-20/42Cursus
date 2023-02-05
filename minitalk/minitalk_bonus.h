@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 00:30:56 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/03 00:31:11 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/05 00:56:33 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define MINITALK_BONUS_H
 
 # include<unistd.h>
-# include<stdio.h>
-# include<stdlib.h>
+// # include<stdio.h>
+// # include<stdlib.h>
 # include<signal.h>
-# include<string.h>
+// # include<string.h>
 
 typedef struct sigaction	t_sigaction;
 
@@ -28,4 +28,5 @@ void	ft_putstr_fd(char *s, int fd);
 void	handler(int sig, siginfo_t *info, void *cont);
 void	*ft_memset(void *str, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 #endif

@@ -6,11 +6,11 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 00:28:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/03 23:52:48 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/05 00:47:44 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 //convert_to_binary function uing bitwise operators
 void	convert_to_binary(char c, pid_t pid)
@@ -30,9 +30,10 @@ void	convert_to_binary(char c, pid_t pid)
 }
 
 //function to signal from the client to the server that the message is complete
-void	message_sent(void)
+void	message_sent(int seg)
 {
-	ft_putstr_fd("\033[33mMessage sent\n\033[0m", 1);
+	if (seg == SIGUSR2)
+		ft_putstr_fd("\033[33mMessage sent\n\033[0m", 1);
 }
 
 int	main(int ac, char **av)
@@ -44,6 +45,7 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error: wrong number of arguments", 1);
 	else
 	{
+		signal(SIGUSR2, message_sent);
 		i = 0;
 		pid = ft_atoi(av[1]);
 		while (av[2][i])
@@ -52,7 +54,6 @@ int	main(int ac, char **av)
 			i++;
 		}
 		convert_to_binary('\0', pid);
-		message_sent();
 	}
 	return (0);
 }

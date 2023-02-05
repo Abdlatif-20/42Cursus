@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 17:35:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/05 00:56:05 by aben-nei         ###   ########.fr       */
+/*   Created: 2022/10/09 11:58:18 by aben-nei          #+#    #+#             */
+/*   Updated: 2023/02/04 22:46:48 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../minitalk.h"
+#include "../minitalk_bonus.h"
 
-int	ft_atoi(const char *str)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	int		res;
-	int		sign;
+	size_t	i;
 
-	res = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		res = (res * 10) + (*str - '0');
-		str++;
-	}
-	return (sign * res);
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (str1[i] && i < n - 1 && str1[i] == str2[i])
+		i++;
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }
