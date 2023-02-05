@@ -6,7 +6,7 @@
 #    By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 01:01:16 by aben-nei          #+#    #+#              #
-#    Updated: 2023/02/05 01:32:57 by aben-nei         ###   ########.fr        #
+#    Updated: 2023/02/05 01:55:15 by aben-nei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(NAME): $(OBJ)
 	@echo ""
 	@echo "Compilation of \033[33mMandatory\033[0m: [\033[0;32mOK\033[0m]"
 
-%.o: %.c $(HEADER)
+%.o: %.c $(HEADER) $(HEADER_BNS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: banner_bonus $(NAME_BONUS) client_bonus server_bonus
