@@ -6,13 +6,12 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 00:28:46 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/05 02:13:21 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/20 18:13:16 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
 
-//convert binary to char function using bitwise operators
 char	convert_to_char(char *str)
 {
 	int	i;
@@ -29,7 +28,6 @@ char	convert_to_char(char *str)
 	return (res);
 }
 
-//handler function to handle signals from client
 void	handler(int sig, siginfo_t *info, void *cont)
 {
 	static char	str[9];

@@ -6,13 +6,12 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 03:11:34 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/05 00:46:19 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/20 18:16:13 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-//convert_to_binary function uing bitwise operators
 void	convert_to_binary(char c, pid_t pid)
 {
 	int	i;
@@ -24,7 +23,7 @@ void	convert_to_binary(char c, pid_t pid)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(700);
+		usleep(800);
 		i--;
 	}
 }

@@ -6,11 +6,12 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:07:49 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/03 16:03:16 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/11 09:07:44 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../minitalk.h"
+#include"../minitalk_bonus.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

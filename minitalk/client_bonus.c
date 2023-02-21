@@ -6,13 +6,12 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 00:28:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/05 00:47:44 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/11 09:38:14 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
 
-//convert_to_binary function uing bitwise operators
 void	convert_to_binary(char c, pid_t pid)
 {
 	int	i;
@@ -29,7 +28,6 @@ void	convert_to_binary(char c, pid_t pid)
 	}
 }
 
-//function to signal from the client to the server that the message is complete
 void	message_sent(int seg)
 {
 	if (seg == SIGUSR2)
