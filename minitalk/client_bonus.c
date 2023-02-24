@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 00:28:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/24 20:40:31 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/24 20:50:48 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int ac, char **av)
 		signal(SIGUSR2, message_sent);
 		i = 0;
 		pid = ft_atoi(av[1]);
-		if (pid <= 0)
+		if (pid <= 0 || ft_atoi(av[1]) > 2147483647)
 		{
 			ft_putstr_fd("Error: wrong PID !!\n", 1);
 			exit(1);
