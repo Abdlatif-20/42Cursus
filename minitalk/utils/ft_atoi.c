@@ -6,17 +6,17 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:35:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/11 09:07:29 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/24 13:29:04 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../minitalk.h"
 #include"../minitalk_bonus.h"
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	int		res;
-	int		sign;
+	long long		res;
+	long long		sign;
 
 	res = 0;
 	sign = 1;

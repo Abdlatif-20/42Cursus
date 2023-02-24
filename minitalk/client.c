@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 03:11:34 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/20 18:16:13 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/24 20:37:38 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,23 @@ int	main(int ac, char **av)
 	int		i;
 
 	if (ac != 3)
+	{
 		ft_putstr_fd("Error: wrong number of arguments !!\n", 1);
+		exit(1);
+	}
 	else
 	{
 		i = 0;
 		pid = ft_atoi(av[1]);
-		while (av[2][i])
+		if (pid <= 0 || ft_atoi(av[1]) > 2147483647)
 		{
-			convert_to_binary(av[2][i], pid);
-			i++;
+			ft_putstr_fd("Error: wrong PID !!\n", 1);
+			exit(1);
 		}
-		convert_to_binary('\0', pid);
+		if (av[2][i] == '\0')
+			ft_putstr_fd("Error: empty message !!\n", 1);
+		while (av[2][i])
+			convert_to_binary(av[2][i++], pid);
 	}
 	return (0);
 }

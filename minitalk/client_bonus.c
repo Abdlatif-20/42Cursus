@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 00:28:21 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/11 09:38:14 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/24 20:40:31 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	convert_to_binary(char c, pid_t pid)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(700);
+		usleep(950);
 		i--;
 	}
 }
@@ -31,7 +31,7 @@ void	convert_to_binary(char c, pid_t pid)
 void	message_sent(int seg)
 {
 	if (seg == SIGUSR2)
-		ft_putstr_fd("\033[33mMessage sent\n\033[0m", 1);
+		ft_putstr_fd("\033[33m<<Message sent>>\n\033[0m", 1);
 }
 
 int	main(int ac, char **av)
@@ -40,17 +40,24 @@ int	main(int ac, char **av)
 	int		i;
 
 	if (ac != 3)
+	{
 		ft_putstr_fd("Error: wrong number of arguments", 1);
+		exit(1);
+	}
 	else
 	{
 		signal(SIGUSR2, message_sent);
 		i = 0;
 		pid = ft_atoi(av[1]);
-		while (av[2][i])
+		if (pid <= 0)
 		{
-			convert_to_binary(av[2][i], pid);
-			i++;
+			ft_putstr_fd("Error: wrong PID !!\n", 1);
+			exit(1);
 		}
+		if (av[2][i] == '\0')
+			return (ft_putstr_fd("Error: empty message !!\n", 1), exit(1), 0);
+		while (av[2][i])
+			convert_to_binary(av[2][i++], pid);
 		convert_to_binary('\0', pid);
 	}
 	return (0);

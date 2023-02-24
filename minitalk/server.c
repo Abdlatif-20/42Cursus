@@ -6,7 +6,7 @@
 /*   By: aben-nei <aben-nei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 21:43:06 by aben-nei          #+#    #+#             */
-/*   Updated: 2023/02/11 09:03:25 by aben-nei         ###   ########.fr       */
+/*   Updated: 2023/02/24 18:44:40 by aben-nei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	main(void)
 	pid = getpid();
 	ft_putnbr_fd(pid, 1);
 	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("\033[92m==> Waiting for message from client...\033[0m\n", 1);
 	sa.sa_flags = SA_SIGINFO;
 	sa.sa_sigaction = handler;
 	sigaction(SIGUSR1, &sa, NULL);
